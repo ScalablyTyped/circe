@@ -22,8 +22,8 @@ And the encoder / decoder instances:
 
 ```scala mdoc:silent
 import cats.syntax.functor._
-import io.circe.{ Decoder, Encoder }, io.circe.generic.auto._
-import io.circe.syntax._
+import io.circe013.{ Decoder, Encoder }, io.circe013.generic.auto._
+import io.circe013.syntax._
 
 object GenericDerivation {
   implicit val encodeEvent: Encoder[Event] = Encoder.instance {
@@ -45,13 +45,13 @@ object GenericDerivation {
 
 Note that we have to call `widen` (which is provided by Cats's `Functor` syntax, which we bring into scope with the first import) on the decoders because the `Decoder` type class is not covariant. The invariance of circe's type classes is a matter of [some controversy](https://twitter.com/Gentmen/status/829431567315513344) (`Argonaut` for example has gone from invariant to covariant and back), but it has enough benefits that it's unlikely to change, which means we need workarounds like this occasionally.
 
-It's also worth noting that our explicit `Encoder` and `Decoder` instances will take precedence over the generically-derived instances we would otherwise get from the `io.circe.generic.auto._` import (see slides from Travis Brown's talk [here](http://meta.plasm.us/slides/scalaworld/#1) for some discussion of how this prioritization works).
+It's also worth noting that our explicit `Encoder` and `Decoder` instances will take precedence over the generically-derived instances we would otherwise get from the `io.circe013.generic.auto._` import (see slides from Travis Brown's talk [here](http://meta.plasm.us/slides/scalaworld/#1) for some discussion of how this prioritization works).
 
 We can use these instances like this:
 
 ```scala mdoc
 import GenericDerivation._
-import io.circe.parser.decode
+import io.circe013.parser.decode
 
 decode[Event]("""{ "i": 1000 }""")
 
@@ -69,7 +69,7 @@ As discussed [on Gitter](https://gitter.im/circe/circe?at=589dee5daa800ee52c7aac
 import GenericDerivation.{ decodeEvent => _, encodeEvent => _ }
 
 object ShapesDerivation {
-  import io.circe.shapes
+  import io.circe013.shapes
   import shapeless.{ Coproduct, Generic }
 
   implicit def encodeAdtNoDiscr[A, Repr <: Coproduct](implicit
@@ -89,7 +89,7 @@ And then:
 
 ```scala mdoc
 import ShapesDerivation._
-import io.circe.parser.decode, io.circe.syntax._
+import io.circe013.parser.decode, io.circe013.syntax._
 
 decode[Event]("""{ "i": 1000 }""")
 
@@ -105,8 +105,8 @@ The main drawback of this approach (apart from the extra `circe-shapes` dependen
 The `generic-extras` module provides a little more configurability in this respect. We can write the following, for example:
 
 ```scala mdoc:silent
-import io.circe.generic.extras.auto._
-import io.circe.generic.extras.Configuration
+import io.circe013.generic.extras.auto._
+import io.circe013.generic.extras.Configuration
 
 implicit val genDevConfig: Configuration =
   Configuration.default.withDiscriminator("what_am_i")
@@ -115,7 +115,7 @@ implicit val genDevConfig: Configuration =
 And then:
 
 ```scala mdoc
-import io.circe.parser.decode, io.circe.syntax._
+import io.circe013.parser.decode, io.circe013.syntax._
 
 (Foo(100): Event).asJson.noSpaces
 

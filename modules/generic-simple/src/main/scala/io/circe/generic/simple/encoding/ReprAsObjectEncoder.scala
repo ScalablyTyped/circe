@@ -1,6 +1,6 @@
-package io.circe.generic.simple.encoding
+package io.circe013.generic.simple.encoding
 
-import io.circe.{ Encoder, JsonObject }
+import io.circe013.{ Encoder, JsonObject }
 import shapeless.{ :+:, ::, CNil, Coproduct, HList, HNil, Inl, Inr, Witness }
 import shapeless.labelled.FieldType
 

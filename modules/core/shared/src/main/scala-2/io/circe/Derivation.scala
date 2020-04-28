@@ -1,5 +1,5 @@
-package io.circe
+package io.circe013
 
-private[circe] trait DecoderDerivation
-private[circe] trait EncoderDerivation
-private[circe] trait CodecDerivation
+private[circe013] trait DecoderDerivation
+private[circe013] trait EncoderDerivation
+private[circe013] trait CodecDerivation

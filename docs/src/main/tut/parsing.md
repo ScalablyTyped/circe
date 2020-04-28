@@ -11,13 +11,13 @@ Circe includes a parsing module, which on the JVM is a wrapper around the [Jawn]
 Parsing is not part of the `circe-core` module, so you will need to include a dependency on the `circe-parser` module in your build:
 
 ```scala
-libraryDependencies += "io.circe" %% "circe-parser" % circeVersion
+libraryDependencies += "io.circe013" %% "circe-parser" % circeVersion
 ```
 
 Parsing is done as follows.
 
 ```scala mdoc
-import io.circe._, io.circe.parser._
+import io.circe013._, io.circe013.parser._
 
 val rawJson: String = """
 {
@@ -30,7 +30,7 @@ val rawJson: String = """
 val parseResult = parse(rawJson)
 ```
 
-Because parsing might fail, the result is an `Either` with an `io.circe.Error` on the left side.
+Because parsing might fail, the result is an `Either` with an `io.circe013.Error` on the left side.
 In the example above, the input was valid JSON, so the result was a `Right` containing the
 corresponding JSON representation.
 

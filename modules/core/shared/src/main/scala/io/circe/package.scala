@@ -1,6 +1,6 @@
 package io
 
-package object circe {
+package object circe013 {
   @deprecated("Use Encoder.AsRoot", "0.12.0")
   type RootEncoder[A] = Encoder.AsRoot[A]
   @deprecated("Use Encoder.AsRoot", "0.12.0")

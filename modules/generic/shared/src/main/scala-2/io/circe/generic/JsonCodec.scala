@@ -1,6 +1,6 @@
-package io.circe.generic
+package io.circe013.generic
 
-import io.circe.generic.util.macros.JsonCodecMacros
+import io.circe013.generic.util.macros.JsonCodecMacros
 import scala.language.experimental.macros
 import scala.reflect.macros.blackbox
 

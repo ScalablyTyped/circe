@@ -1,9 +1,9 @@
-package io.circe
+package io.circe013
 
 import cats.kernel.instances.all._
 import cats.syntax.eq._
-import io.circe.numbers.testing.JsonNumberString
-import io.circe.tests.CirceSuite
+import io.circe013.numbers.testing.JsonNumberString
+import io.circe013.tests.CirceSuite
 
 class JsonNumberSuite extends CirceSuite {
   "fromString" should "parse valid JSON numbers" in forAll { (jns: JsonNumberString) =>

@@ -13,9 +13,9 @@ title:  "Warnings and known issues"
    derive instances for are at the same level as the attempted derivation. For example:
 
    ```
-   scala> import io.circe.Decoder, io.circe.generic.auto._
-   import io.circe.Decoder
-   import io.circe.generic.auto._
+   scala> import io.circe013.Decoder, io.circe013.generic.auto._
+   import io.circe013.Decoder
+   import io.circe013.generic.auto._
 
    scala> sealed trait A; case object B extends A; object X { val d = Decoder[A] }
    defined trait A
@@ -23,7 +23,7 @@ title:  "Warnings and known issues"
    defined object X
 
    scala> object X { sealed trait A; case object B extends A; val d = Decoder[A] }
-   <console>:19: error: could not find implicit value for parameter d: io.circe.Decoder[X.A]
+   <console>:19: error: could not find implicit value for parameter d: io.circe013.Decoder[X.A]
           object X { sealed trait A; case object B extends A; val d = Decoder[A] }
    ```
 
@@ -47,10 +47,10 @@ title:  "Warnings and known issues"
    the [Gitter channel](https://gitter.im/circe/circe), and we'll do our best to figure out whether the problem is
    something we can fix.
 
-5. When using the `io.circe.generic.JsonCodec` annotation, the following will not compile:
+5. When using the `io.circe013.generic.JsonCodec` annotation, the following will not compile:
 
    ```scala
-   import io.circe.generic.JsonCodec
+   import io.circe013.generic.JsonCodec
 
    @JsonCodec sealed trait A
    case class B(b: String) extends A
@@ -61,7 +61,7 @@ title:  "Warnings and known issues"
    the leaf types:
 
    ```scala
-   import io.circe.generic.JsonCodec
+   import io.circe013.generic.JsonCodec
 
    @JsonCodec sealed trait A
    case class B(b: String) extends A
@@ -95,15 +95,15 @@ on how the types that it interacts with are declared in your codebase.
 Here is a collection workarounds found by other users that you can try:
 
   1. Rename your files/directories so that the files containing types that get encoded/decoded come
-     alphabetically before the files that `import io.circe.generic.auto._` and turn values of those
+     alphabetically before the files that `import io.circe013.generic.auto._` and turn values of those
      types into JSON.
   2. If you've got a sealed trait (e.g. `sealed trait MyEnum`) and it has subclasses that are declared
      in its companion object, try adding a `import MyEnum._` statement before any calls that force the
      materialising of an encoder/decoder.
 
      ```scala
-     import io.circe.syntax._
-     import io.circe.generic.auto._
+     import io.circe013.syntax._
+     import io.circe013.generic.auto._
      val person = Person("hello", Role.User)
      import Role._
      val asJson = person.asJson

@@ -1,7 +1,7 @@
-package io.circe.benchmark
+package io.circe013.benchmark
 
 import cats.kernel.Eq
-import io.circe.{ Codec, Decoder, Encoder, HCursor, Json }
+import io.circe013.{ Codec, Decoder, Encoder, HCursor, Json }
 import java.util.concurrent.TimeUnit
 import org.openjdk.jmh.annotations._
 
@@ -16,7 +16,7 @@ object Foo {
  *
  * The following command will run the benchmarks with reasonable settings:
  *
- * > sbt "benchmarkDotty/jmh:run -i 10 -wi 10 -f 2 -t 1 io.circe.benchmark.DerivesBenchmark"
+ * > sbt "benchmarkDotty/jmh:run -i 10 -wi 10 -f 2 -t 1 io.circe013.benchmark.DerivesBenchmark"
  */
 @State(Scope.Thread)
 @BenchmarkMode(Array(Mode.Throughput))

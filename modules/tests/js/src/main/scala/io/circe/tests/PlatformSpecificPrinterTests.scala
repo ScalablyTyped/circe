@@ -1,3 +1,3 @@
-package io.circe.tests
+package io.circe013.tests
 
 trait PlatformSpecificPrinterTests

@@ -1,10 +1,10 @@
-package io.circe.testing
+package io.circe013.testing
 
 import cats.instances.either._
 import cats.instances.option._
 import cats.instances.string._
 import cats.kernel.Eq
-import io.circe.{ Decoder, Encoder, Json, KeyDecoder, KeyEncoder }
+import io.circe013.{ Decoder, Encoder, Json, KeyDecoder, KeyEncoder }
 import org.scalacheck.Arbitrary
 
 trait EqInstances { this: ArbitraryInstances =>

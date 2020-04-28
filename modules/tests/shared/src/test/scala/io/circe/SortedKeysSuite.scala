@@ -1,10 +1,10 @@
-package io.circe
+package io.circe013
 
 import cats.kernel.instances.list._
 import cats.kernel.instances.string._
 import cats.kernel.instances.vector._
 import cats.syntax.eq._
-import io.circe.tests.PrinterSuite
+import io.circe013.tests.PrinterSuite
 
 trait SortedKeysSuite { this: PrinterSuite =>
   "Printer with sortKeys" should "sort the object keys (example)" in {

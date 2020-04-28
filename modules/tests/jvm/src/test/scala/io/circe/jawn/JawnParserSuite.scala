@@ -1,10 +1,10 @@
-package io.circe.jawn
+package io.circe013.jawn
 
 import cats.data.Validated
-import io.circe.Json
-import io.circe.testing.ParserTests
-import io.circe.tests.CirceSuite
-import io.circe.tests.examples.glossary
+import io.circe013.Json
+import io.circe013.testing.ParserTests
+import io.circe013.tests.CirceSuite
+import io.circe013.tests.examples.glossary
 import java.io.File
 import java.nio.ByteBuffer
 import scala.io.Source

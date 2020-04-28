@@ -1,6 +1,6 @@
-package io.circe.benchmark
+package io.circe013.benchmark
 
-import io.circe.{ Decoder, Json }
+import io.circe013.{ Decoder, Json }
 import java.util.concurrent.TimeUnit
 import org.openjdk.jmh.annotations._
 
@@ -9,7 +9,7 @@ import org.openjdk.jmh.annotations._
  *
  * The following command will run the benchmarks with reasonable settings:
  *
- * > sbt "benchmark/jmh:run -i 10 -wi 10 -f 2 -t 1 io.circe.benchmark.AtBenchmark"
+ * > sbt "benchmark/jmh:run -i 10 -wi 10 -f 2 -t 1 io.circe013.benchmark.AtBenchmark"
  */
 @State(Scope.Thread)
 @BenchmarkMode(Array(Mode.Throughput))

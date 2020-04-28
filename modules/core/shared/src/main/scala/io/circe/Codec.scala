@@ -1,4 +1,4 @@
-package io.circe
+package io.circe013
 
 import cats.data.Validated
 
@@ -9,7 +9,7 @@ import cats.data.Validated
  * Note that this type class is only intended to make instance definition more
  * convenient; it generally should not be used as a constraint.
  *
- * Instances should obey the laws defined in [[io.circe.testing.CodecLaws]].
+ * Instances should obey the laws defined in [[io.circe013.testing.CodecLaws]].
  */
 trait Codec[A] extends Decoder[A] with Encoder[A]
 

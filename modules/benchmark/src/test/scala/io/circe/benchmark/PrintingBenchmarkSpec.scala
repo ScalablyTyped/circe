@@ -1,6 +1,6 @@
-package io.circe.benchmark
+package io.circe013.benchmark
 
-import io.circe.jawn.decode
+import io.circe013.jawn.decode
 import java.nio.ByteBuffer
 import java.nio.charset.StandardCharsets.UTF_8
 import org.scalatest.flatspec.AnyFlatSpec

@@ -1,6 +1,6 @@
-package io.circe.benchmark
+package io.circe013.benchmark
 
-import io.circe.Json
+import io.circe013.Json
 import org.scalatest.flatspec.AnyFlatSpec
 
 class InstantiationBenchmarkSpec extends AnyFlatSpec {

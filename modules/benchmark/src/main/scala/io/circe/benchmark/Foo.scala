@@ -1,8 +1,8 @@
-package io.circe.benchmark
+package io.circe013.benchmark
 
 import cats.kernel.Eq
-import io.circe.{ Decoder, Encoder }
-import io.circe.generic.semiauto._
+import io.circe013.{ Decoder, Encoder }
+import io.circe013.generic.semiauto._
 
 case class Foo(s: String, d: Double, i: Int, l: Long, bs: List[Boolean])
 

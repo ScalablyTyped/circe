@@ -1,4 +1,4 @@
-package io.circe
+package io.circe013
 
 import cats.MonadError
 import java.io.Serializable
@@ -49,7 +49,7 @@ object KeyDecoder {
   /**
    * A [[KeyDecoder]] that will always succeed.
    */
-  private[circe] abstract class AlwaysKeyDecoder[A] extends KeyDecoder[A] {
+  private[circe013] abstract class AlwaysKeyDecoder[A] extends KeyDecoder[A] {
     def decodeSafe(key: String): A
 
     final def apply(key: String): Option[A] = Some(decodeSafe(key))

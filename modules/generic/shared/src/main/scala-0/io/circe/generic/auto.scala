@@ -1,13 +1,13 @@
-package io.circe.generic
+package io.circe013.generic
 
-import io.circe.{ Decoder, Encoder }
-import io.circe.`export`.Exported
+import io.circe013.{ Decoder, Encoder }
+import io.circe013.`export`.Exported
 import scala.deriving.Mirror
 
 /**
  * Fully automatic codec derivation.
  *
- * Extending this trait provides [[io.circe.Decoder]] and [[io.circe.Encoder]]
+ * Extending this trait provides [[io.circe013.Decoder]] and [[io.circe013.Encoder]]
  * instances for case classes (if all members have instances), sealed
  * trait hierarchies, etc.
  */

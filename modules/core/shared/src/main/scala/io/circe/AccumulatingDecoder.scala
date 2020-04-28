@@ -1,4 +1,4 @@
-package io.circe
+package io.circe013
 
 import cats.{ ApplicativeError, Semigroup }
 import cats.data.NonEmptyList

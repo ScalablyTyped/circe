@@ -1,7 +1,7 @@
-package io.circe
+package io.circe013
 
 import cats.{ Eq, Show }
-import io.circe.numbers.BiggerDecimal
+import io.circe013.numbers.BiggerDecimal
 import java.io.Serializable
 import scala.collection.mutable.ListBuffer
 
@@ -262,7 +262,7 @@ object Json {
     def onObject(value: JsonObject): X
   }
 
-  private[circe] final case object JNull extends Json {
+  private[circe013] final case object JNull extends Json {
     final def foldWith[X](folder: Folder[X]): X = folder.onNull
 
     final def isNull: Boolean = true
@@ -293,7 +293,7 @@ object Json {
     final def mapObject(f: JsonObject => JsonObject): Json = this
   }
 
-  private[circe] final case class JBoolean(value: Boolean) extends Json {
+  private[circe013] final case class JBoolean(value: Boolean) extends Json {
     final def foldWith[X](folder: Folder[X]): X = folder.onBoolean(value)
 
     final def isNull: Boolean = false
@@ -324,7 +324,7 @@ object Json {
     final def mapObject(f: JsonObject => JsonObject): Json = this
   }
 
-  private[circe] final case class JNumber(value: JsonNumber) extends Json {
+  private[circe013] final case class JNumber(value: JsonNumber) extends Json {
     final def foldWith[X](folder: Folder[X]): X = folder.onNumber(value)
 
     final def isNull: Boolean = false
@@ -355,7 +355,7 @@ object Json {
     final def mapObject(f: JsonObject => JsonObject): Json = this
   }
 
-  private[circe] final case class JString(value: String) extends Json {
+  private[circe013] final case class JString(value: String) extends Json {
     final def foldWith[X](folder: Folder[X]): X = folder.onString(value)
 
     final def isNull: Boolean = false
@@ -386,7 +386,7 @@ object Json {
     final def mapObject(f: JsonObject => JsonObject): Json = this
   }
 
-  private[circe] final case class JArray(value: Vector[Json]) extends Json {
+  private[circe013] final case class JArray(value: Vector[Json]) extends Json {
     final def foldWith[X](folder: Folder[X]): X = folder.onArray(value)
 
     final def isNull: Boolean = false
@@ -417,7 +417,7 @@ object Json {
     final def mapObject(f: JsonObject => JsonObject): Json = this
   }
 
-  private[circe] final case class JObject(value: JsonObject) extends Json {
+  private[circe013] final case class JObject(value: JsonObject) extends Json {
     final def foldWith[X](folder: Folder[X]): X = folder.onObject(value)
 
     final def isNull: Boolean = false

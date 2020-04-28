@@ -1,4 +1,4 @@
-package io.circe
+package io.circe013
 
 import scala.collection.generic.CanBuildFrom
 import scala.collection.mutable.{ ArrayBuilder, Builder }

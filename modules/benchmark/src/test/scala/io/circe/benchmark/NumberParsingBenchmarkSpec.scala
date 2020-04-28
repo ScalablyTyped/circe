@@ -1,6 +1,6 @@
-package io.circe.benchmark
+package io.circe013.benchmark
 
-import io.circe.{ Json, JsonNumber }
+import io.circe013.{ Json, JsonNumber }
 import org.scalatest.flatspec.AnyFlatSpec
 
 class NumberParsingBenchmarkSpec extends AnyFlatSpec {

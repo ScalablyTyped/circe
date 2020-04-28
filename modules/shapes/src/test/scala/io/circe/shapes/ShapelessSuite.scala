@@ -1,10 +1,10 @@
-package io.circe.shapes
+package io.circe013.shapes
 
 import cats.kernel.instances.all._
-import io.circe.{ Decoder, Encoder, Json }
-import io.circe.literal._
-import io.circe.testing.CodecTests
-import io.circe.tests.CirceSuite
+import io.circe013.{ Decoder, Encoder, Json }
+import io.circe013.literal._
+import io.circe013.testing.CodecTests
+import io.circe013.tests.CirceSuite
 import shapeless.{ :+:, ::, CNil, HNil, Nat, Sized, Witness }
 import shapeless.labelled.FieldType
 import shapeless.record.Record

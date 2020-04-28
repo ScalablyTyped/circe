@@ -1,6 +1,6 @@
-package io.circe.generic.decoding
+package io.circe013.generic.decoding
 
-import io.circe.{ Decoder, HCursor }
+import io.circe013.{ Decoder, HCursor }
 import shapeless.{ LabelledGeneric, Lazy }
 
 abstract class DerivedDecoder[A] extends Decoder[A]

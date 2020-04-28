@@ -1,10 +1,10 @@
-package io.circe
+package io.circe013
 
 import cats.data.Const
 import cats.instances.all._
 import cats.kernel.Eq
 import cats.syntax.eq._
-import io.circe.tests.CirceSuite
+import io.circe013.tests.CirceSuite
 import org.scalatest.exceptions.TestFailedException
 
 class JsonObjectSuite extends CirceSuite {

@@ -1,4 +1,4 @@
-package io.circe.refined
+package io.circe013.refined
 
 import cats.kernel.Eq
 import cats.kernel.instances.all._
@@ -10,10 +10,10 @@ import eu.timepit.refined.numeric.{ Greater, Positive }
 import eu.timepit.refined.collection.{ NonEmpty, Size }
 import eu.timepit.refined.scalacheck.numeric.greaterArbitrary
 import eu.timepit.refined.scalacheck.string.startsWithArbitrary
-import io.circe.{ Decoder, Encoder, Json, KeyDecoder, KeyEncoder }
-import io.circe.testing.CodecTests
-import io.circe.tests.CirceSuite
-import io.circe.syntax._
+import io.circe013.{ Decoder, Encoder, Json, KeyDecoder, KeyEncoder }
+import io.circe013.testing.CodecTests
+import io.circe013.tests.CirceSuite
+import io.circe013.syntax._
 import org.scalacheck.{ Arbitrary, Gen }
 import shapeless.{ Nat, Witness => W }
 

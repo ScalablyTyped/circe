@@ -1,4 +1,4 @@
-package io.circe.numbers
+package io.circe013.numbers
 
 import java.io.Serializable
 import java.lang.StringBuilder
@@ -66,7 +66,7 @@ sealed abstract class BiggerDecimal extends Serializable {
    */
   def toLong: Option[Long]
 
-  private[circe] def appendToStringBuilder(builder: StringBuilder): Unit
+  private[circe013] def appendToStringBuilder(builder: StringBuilder): Unit
 }
 
 /**
@@ -132,7 +132,7 @@ private[numbers] final class SigAndExp(
     s"${unscaled}e${scale.negate}"
   }
 
-  private[circe] def appendToStringBuilder(builder: StringBuilder): Unit = {
+  private[circe013] def appendToStringBuilder(builder: StringBuilder): Unit = {
     builder.append(unscaled)
 
     if (scale != BigInteger.ZERO) {
@@ -157,7 +157,7 @@ object BiggerDecimal {
     final def toBigIntegerWithMaxDigits(maxDigits: BigInteger): Option[BigInteger] = Some(BigInteger.ZERO)
     final val toLong: Option[Long] = Some(0L)
 
-    private[circe] def appendToStringBuilder(builder: StringBuilder): Unit =
+    private[circe013] def appendToStringBuilder(builder: StringBuilder): Unit =
       builder.append(toString)
   }
 

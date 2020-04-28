@@ -1,9 +1,9 @@
-package io.circe.hygiene
+package io.circe013.hygiene
 
-import io.circe.{ Decoder, Encoder, Json }
-import io.circe.generic.auto._
-import io.circe.generic.semiauto._
-import io.circe.literal._
+import io.circe013.{ Decoder, Encoder, Json }
+import io.circe013.generic.auto._
+import io.circe013.generic.semiauto._
+import io.circe013.literal._
 import scala.StringContext
 import shapeless.Witness
 

@@ -123,11 +123,11 @@ object Boilerplate {
         else s"Decoder.accumulatingResultInstance.tuple$arity($accumulatingApplied)"
 
       block"""
-        |package io.circe
+        |package io.circe013
         |
         |import cats.data.Validated
         |
-        |private[circe] trait TupleDecoders {
+        |private[circe013] trait TupleDecoders {
         -  /**
         -   * @group Tuple
         -   */
@@ -162,9 +162,9 @@ object Boilerplate {
       }.mkString(", ")
 
       block"""
-        |package io.circe
+        |package io.circe013
         |
-        |private[circe] trait TupleEncoders {
+        |private[circe013] trait TupleEncoders {
         -  /**
         -   * @group Tuple
         -   */
@@ -189,12 +189,12 @@ object Boilerplate {
       val tupleType = s"($tupleTypeList)"
 
       block"""
-        |package io.circe
+        |package io.circe013
         |
         |import cats.kernel.instances.int._
         |import cats.kernel.instances.tuple._
-        |import io.circe.testing.CodecTests
-        |import io.circe.tests.CirceSuite
+        |import io.circe013.testing.CodecTests
+        |import io.circe013.tests.CirceSuite
         |
         |class TupleCodecSuite extends CirceSuite {
         |  checkAll("Codec[Tuple1[Int]]", CodecTests[Tuple1[Int]].codec)
@@ -228,9 +228,9 @@ object Boilerplate {
         else s"Decoder.accumulatingResultInstance.map$arity($accumulatingResults)(f)"
 
       block"""
-        |package io.circe
+        |package io.circe013
         |
-        |private[circe] trait ProductDecoders {
+        |private[circe013] trait ProductDecoders {
         -  /**
         -   * @group Product
         -   */
@@ -268,9 +268,9 @@ object Boilerplate {
       val outputType = if (arity != 1) s"Product$arity[${`A..N`}]" else `A..N`
 
       block"""
-        |package io.circe
+        |package io.circe013
         |
-        |private[circe] trait ProductEncoders {
+        |private[circe013] trait ProductEncoders {
         -  /**
         -   * @group Product
         -   */
@@ -323,9 +323,9 @@ object Boilerplate {
       val outputType = if (arity != 1) s"Product$arity[${`A..N`}]" else `A..N`
 
       block"""
-        |package io.circe
+        |package io.circe013
         |
-        |private[circe] trait ProductCodecs {
+        |private[circe013] trait ProductCodecs {
         -  /**
         -   * @group Product
         -   */
@@ -365,11 +365,11 @@ object Boilerplate {
       val memberArbitraryItems = (0 until arity).map(i => s"s$i <- Arbitrary.arbitrary[String]").mkString("; ")
 
       block"""
-        |package io.circe
+        |package io.circe013
         |
         |import cats.kernel.Eq
-        |import io.circe.testing.CodecTests
-        |import io.circe.tests.CirceSuite
+        |import io.circe013.testing.CodecTests
+        |import io.circe013.tests.CirceSuite
         |import org.scalacheck.Arbitrary
         |
         |class ProductCodecSuite extends CirceSuite {

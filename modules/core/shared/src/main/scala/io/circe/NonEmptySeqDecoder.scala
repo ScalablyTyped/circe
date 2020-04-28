@@ -1,8 +1,8 @@
-package io.circe
+package io.circe013
 
 import scala.collection.mutable.Builder
 
-private[circe] abstract class NonEmptySeqDecoder[A, C[_], S](decodeA: Decoder[A]) extends Decoder[S] { self =>
+private[circe013] abstract class NonEmptySeqDecoder[A, C[_], S](decodeA: Decoder[A]) extends Decoder[S] { self =>
   protected def createBuilder(): Builder[A, C[A]]
   protected def create: (A, C[A]) => S
   private[this] final val decodeCA: Decoder[C[A]] = new SeqDecoder[A, C](decodeA) {

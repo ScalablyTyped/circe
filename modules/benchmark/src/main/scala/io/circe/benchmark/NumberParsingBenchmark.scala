@@ -1,7 +1,7 @@
-package io.circe.benchmark
+package io.circe013.benchmark
 
-import io.circe.{ Error, Json }
-import io.circe.jawn
+import io.circe013.{ Error, Json }
+import io.circe013.jawn
 import java.util.concurrent.TimeUnit
 import org.openjdk.jmh.annotations._
 
@@ -10,7 +10,7 @@ import org.openjdk.jmh.annotations._
  *
  * The following command will run the benchmarks with reasonable settings:
  *
- * > sbt "benchmark/jmh:run -i 10 -wi 10 -f 2 -t 1 io.circe.benchmark.NumberParsingBenchmark"
+ * > sbt "benchmark/jmh:run -i 10 -wi 10 -f 2 -t 1 io.circe013.benchmark.NumberParsingBenchmark"
  */
 @State(Scope.Thread)
 @BenchmarkMode(Array(Mode.Throughput))

@@ -8,11 +8,11 @@ import akka.io.IO
 import akka.pattern.ask
 import akka.util.Timeout
 import cats.syntax.show._
-import io.circe.{ DecodingFailure, Errors}
-import io.circe.generic.auto._
-import io.circe.java8.time._
-import io.circe.spray.ErrorAccumulatingJsonSupport._
-import io.circe.syntax._
+import io.circe013.{ DecodingFailure, Errors}
+import io.circe013.generic.auto._
+import io.circe013.java8.time._
+import io.circe013.spray.ErrorAccumulatingJsonSupport._
+import io.circe013.syntax._
 import java.util.UUID
 import scala.concurrent.duration._
 import scala.concurrent.ExecutionContext.Implicits.global

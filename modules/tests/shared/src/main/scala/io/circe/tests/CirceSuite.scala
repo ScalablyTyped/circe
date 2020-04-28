@@ -1,8 +1,8 @@
-package io.circe.tests
+package io.circe013.tests
 
 import cats.instances._
 import cats.syntax._
-import io.circe.testing.{ ArbitraryInstances, EqInstances }
+import io.circe013.testing.{ ArbitraryInstances, EqInstances }
 import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatestplus.scalacheck.ScalaCheckDrivenPropertyChecks
 import org.typelevel.discipline.scalatest.FlatSpecDiscipline

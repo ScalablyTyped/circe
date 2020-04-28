@@ -1,9 +1,9 @@
-package io.circe
+package io.circe013
 
 import cats.data.{ NonEmptyList, Validated }
 import scala.collection.mutable.Builder
 
-private[circe] abstract class SeqDecoder[A, C[_]](decodeA: Decoder[A]) extends Decoder[C[A]] {
+private[circe013] abstract class SeqDecoder[A, C[_]](decodeA: Decoder[A]) extends Decoder[C[A]] {
   protected def createBuilder(): Builder[A, C[A]]
 
   def apply(c: HCursor): Decoder.Result[C[A]] = {

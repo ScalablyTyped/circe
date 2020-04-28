@@ -1,9 +1,9 @@
-package io.circe.generic.simple.util.macros
+package io.circe013.generic.simple.util.macros
 
-import io.circe.{ Decoder, Encoder }
-import io.circe.export.Exported
-import io.circe.generic.simple.decoding.DerivedDecoder
-import io.circe.generic.simple.encoding.DerivedAsObjectEncoder
+import io.circe013.{ Decoder, Encoder }
+import io.circe013.export.Exported
+import io.circe013.generic.simple.decoding.DerivedDecoder
+import io.circe013.generic.simple.encoding.DerivedAsObjectEncoder
 import scala.reflect.macros.blackbox
 
 trait Lazy[+A] extends Serializable {
@@ -28,11 +28,11 @@ class ExportMacros(val c: blackbox.Context) {
   ): c.Expr[Exported[Decoder[A]]] = {
     val target = appliedType(D.tpe.typeConstructor, A.tpe)
 
-    c.typecheck(q"_root_.io.circe.generic.simple.util.macros.Lazy.lazily[$target]", silent = true) match {
+    c.typecheck(q"_root_.io.circe013.generic.simple.util.macros.Lazy.lazily[$target]", silent = true) match {
       case EmptyTree => c.abort(c.enclosingPosition, s"Unable to infer value of type $target")
       case t =>
         c.Expr[Exported[Decoder[A]]](
-          q"new _root_.io.circe.export.Exported($t: _root_.io.circe.Decoder[$A])"
+          q"new _root_.io.circe013.export.Exported($t: _root_.io.circe013.Decoder[$A])"
         )
     }
   }
@@ -44,11 +44,11 @@ class ExportMacros(val c: blackbox.Context) {
   ): c.Expr[Exported[Encoder.AsObject[A]]] = {
     val target = appliedType(E.tpe.typeConstructor, A.tpe)
 
-    c.typecheck(q"_root_.io.circe.generic.simple.util.macros.Lazy.lazily[$target]", silent = true) match {
+    c.typecheck(q"_root_.io.circe013.generic.simple.util.macros.Lazy.lazily[$target]", silent = true) match {
       case EmptyTree => c.abort(c.enclosingPosition, s"Unable to infer value of type $target")
       case t =>
         c.Expr[Exported[Encoder.AsObject[A]]](
-          q"new _root_.io.circe.export.Exported($t: _root_.io.circe.Encoder.AsObject[$A])"
+          q"new _root_.io.circe013.export.Exported($t: _root_.io.circe013.Encoder.AsObject[$A])"
         )
     }
   }

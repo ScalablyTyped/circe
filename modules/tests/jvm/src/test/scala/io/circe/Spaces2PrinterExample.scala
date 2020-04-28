@@ -1,4 +1,4 @@
-package io.circe
+package io.circe013
 
 import cats.instances.all._
 import cats.syntax.eq._

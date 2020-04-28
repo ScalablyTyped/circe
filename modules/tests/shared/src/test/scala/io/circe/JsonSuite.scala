@@ -1,9 +1,9 @@
-package io.circe
+package io.circe013
 
 import cats.instances.all._
 import cats.syntax.eq._
-import io.circe.syntax._
-import io.circe.tests.CirceSuite
+import io.circe013.syntax._
+import io.circe013.tests.CirceSuite
 
 class JsonSuite extends CirceSuite with FloatJsonTests {
   "foldWith" should "give the same result as fold" in forAll { (json: Json) =>

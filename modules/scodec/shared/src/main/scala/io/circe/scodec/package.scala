@@ -1,4 +1,4 @@
-package io.circe
+package io.circe013
 
 import _root_.scodec.bits.{ BitVector, ByteVector }
 
@@ -31,7 +31,7 @@ package object scodec {
    * Examples:
    * {{{
    * encodeBitVector(bin"101")
-   * res: io.circe.Json =
+   * res: io.circe013.Json =
    * {
    *   "bits" : "oA==",
    *   "length" : 3
@@ -39,14 +39,14 @@ package object scodec {
    *
    *
    * encodeBitVector(bin"")
-   * res: io.circe.Json =
+   * res: io.circe013.Json =
    * {
    *   "bits" : "",
    *   "length" : 0
    * }
    *
    * encodeBitVector(bin"11001100")
-   * res: io.circe.Json =
+   * res: io.circe013.Json =
    * {
    *   "bits" : "zA==",
    *   "length" : 8

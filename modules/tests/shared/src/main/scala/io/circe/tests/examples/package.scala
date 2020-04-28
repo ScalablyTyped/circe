@@ -1,10 +1,10 @@
-package io.circe.tests
+package io.circe013.tests
 
 import cats.instances.AllInstances
 import cats.kernel.Eq
 import cats.syntax.functor._
-import io.circe.{ Decoder, DecodingFailure, Encoder, Json }
-import io.circe.testing.ArbitraryInstances
+import io.circe013.{ Decoder, DecodingFailure, Encoder, Json }
+import io.circe013.testing.ArbitraryInstances
 import org.scalacheck.{ Arbitrary, Gen }
 
 package object examples extends AllInstances with ArbitraryInstances with MissingInstances {

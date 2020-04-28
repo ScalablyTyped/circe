@@ -1,9 +1,9 @@
-package io.circe.literal.interpolator
+package io.circe013.literal.interpolator
 
-import io.circe.{ Encoder, Json }
-import io.circe.literal.JsonStringContext
-import io.circe.parser.parse
-import io.circe.testing.instances.arbitraryJson
+import io.circe013.{ Encoder, Json }
+import io.circe013.literal.JsonStringContext
+import io.circe013.parser.parse
+import io.circe013.testing.instances.arbitraryJson
 import org.scalatest.funspec.AnyFunSpec
 import org.scalatestplus.scalacheck.ScalaCheckDrivenPropertyChecks
 

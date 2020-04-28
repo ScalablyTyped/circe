@@ -1,10 +1,10 @@
-package io.circe.syntax
+package io.circe013.syntax
 
 import cats.kernel.instances.string._
 import cats.kernel.instances.tuple._
 import cats.syntax.eq._
-import io.circe.{ Encoder, Json, KeyEncoder }
-import io.circe.tests.CirceSuite
+import io.circe013.{ Encoder, Json, KeyEncoder }
+import io.circe013.tests.CirceSuite
 
 class SyntaxSuite extends CirceSuite {
   "asJson" should "be available and work appropriately" in forAll { (s: String) =>

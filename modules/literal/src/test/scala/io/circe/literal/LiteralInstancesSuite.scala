@@ -1,6 +1,6 @@
-package io.circe.literal
+package io.circe013.literal
 
-import io.circe.{ Decoder, Encoder }
+import io.circe013.{ Decoder, Encoder }
 import org.scalatest.funspec.AnyFunSpec
 import shapeless.Witness
 

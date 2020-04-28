@@ -1,6 +1,6 @@
-package io.circe
+package io.circe013
 
-import io.circe.scalajs.convertJsToJson
+import io.circe013.scalajs.convertJsToJson
 import scala.scalajs.js.JSON
 import scala.util.control.NonFatal
 

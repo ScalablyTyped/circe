@@ -1,4 +1,4 @@
-package io.circe
+package io.circe013
 
 import cats.data.Validated.Invalid
 import cats.data.{ Chain, NonEmptyList, Validated }
@@ -7,12 +7,12 @@ import cats.kernel.Eq
 import cats.laws.discipline.{ MonadErrorTests, SemigroupKTests }
 import cats.syntax.eq._
 import cats.syntax.foldable._
-import io.circe.CursorOp.{ DownArray, DownN }
-import io.circe.parser.parse
-import io.circe.syntax._
-import io.circe.testing.CodecTests
-import io.circe.tests.CirceSuite
-import io.circe.tests.examples.WrappedOptionalField
+import io.circe013.CursorOp.{ DownArray, DownN }
+import io.circe013.parser.parse
+import io.circe013.syntax._
+import io.circe013.testing.CodecTests
+import io.circe013.tests.CirceSuite
+import io.circe013.tests.examples.WrappedOptionalField
 import org.scalatest.prop.TableDrivenPropertyChecks
 import scala.util.{ Failure, Success, Try }
 import scala.util.control.NoStackTrace

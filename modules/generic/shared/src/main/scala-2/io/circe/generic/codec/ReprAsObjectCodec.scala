@@ -1,7 +1,7 @@
-package io.circe.generic.codec
+package io.circe013.generic.codec
 
-import io.circe.{ Codec, Decoder, DecodingFailure, HCursor, JsonObject }
-import io.circe.generic.Deriver
+import io.circe013.{ Codec, Decoder, DecodingFailure, HCursor, JsonObject }
+import io.circe013.generic.Deriver
 import scala.language.experimental.macros
 import shapeless.HNil
 

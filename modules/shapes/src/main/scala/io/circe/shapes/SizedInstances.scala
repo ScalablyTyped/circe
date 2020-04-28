@@ -1,7 +1,7 @@
-package io.circe.shapes
+package io.circe013.shapes
 
 import cats.data.Validated
-import io.circe.{ Decoder, DecodingFailure, Encoder, HCursor }
+import io.circe013.{ Decoder, DecodingFailure, Encoder, HCursor }
 import scala.collection.GenTraversable
 import shapeless.{ AdditiveCollection, Nat, Sized }
 import shapeless.ops.nat.ToInt

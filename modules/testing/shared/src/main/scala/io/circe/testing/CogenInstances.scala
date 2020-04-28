@@ -1,6 +1,6 @@
-package io.circe.testing
+package io.circe013.testing
 
-import io.circe.{ DecodingFailure, Json, JsonNumber, JsonObject }
+import io.circe013.{ DecodingFailure, Json, JsonNumber, JsonObject }
 import org.scalacheck.Cogen
 
 private[testing] trait CogenInstances {

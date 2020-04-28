@@ -1,10 +1,10 @@
-package io.circe.scodec
+package io.circe013.scodec
 
 import cats.kernel.Eq
-import io.circe.{ Decoder, Json }
-import io.circe.parser.decode
-import io.circe.testing.CodecTests
-import io.circe.tests.CirceSuite
+import io.circe013.{ Decoder, Json }
+import io.circe013.parser.decode
+import io.circe013.testing.CodecTests
+import io.circe013.tests.CirceSuite
 import org.scalacheck.Arbitrary
 import _root_.scodec.bits._
 

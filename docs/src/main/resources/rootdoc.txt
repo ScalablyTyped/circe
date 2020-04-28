@@ -5,22 +5,22 @@ The library is divided into a number of modules that either provide core
 functionality, support additional features via third-party dependencies, or
 facilitate integration with other libraries or frameworks.
 
- - [[io.circe.numbers numbers]]: core facilities for representing and parsing
+ - [[io.circe013.numbers numbers]]: core facilities for representing and parsing
    JSON numbers.
- - [[io.circe core]]: our JSON abstract syntax tree, our zipper-like cursor
+ - [[io.circe013 core]]: our JSON abstract syntax tree, our zipper-like cursor
    types, and our encoding and decoding type classes (and instances).
  - [[https://github.com/circe/circe/blob/master/modules/parser/jvm/src/main/scala/io/circe/parser/package.scala parser]]: JSON parsing support for both the Java Virtual
    Machine (using Jawn) and Scala.js (using the native JavaScript JSON parser).
- - [[io.circe.testing testing]]: ScalaCheck `Arbitrary` instances for circe's
+ - [[io.circe013.testing testing]]: ScalaCheck `Arbitrary` instances for circe's
    JSON AST and other types, as well as other useful testing tools.
- - [[io.circe.literal literal]]: JSON string interpolation and encoder and
+ - [[io.circe013.literal literal]]: JSON string interpolation and encoder and
    decoder instances for literal types.
- - [[io.circe.generic generic]]: Shapeless-powered
+ - [[io.circe013.generic generic]]: Shapeless-powered
    [[https://circe.github.io/circe/codec.html generic derivation]] for case
    classes and sealed trait hierarchies.
- - [[io.circe.generic.extras generic-extras]]: additional experimental generic
+ - [[io.circe013.generic.extras generic-extras]]: additional experimental generic
    derivation functionality (including some configurability).
- - [[io.circe.shapes shapes]]: encoders and decoders for
+ - [[io.circe013.shapes shapes]]: encoders and decoders for
    [[https://github.com/milessabin/shapeless Shapeless]] hlists, coproducts, records, and sized collections.
  - [[https://github.com/circe/circe/blob/master/modules/scodec/shared/src/main/scala/io/circe/scodec/package.scala scodec]]: encoders and decoders for
    [[https://github.com/scodec/scodec-bits Scodec]]'s `BitVector` and `ByteVector`.

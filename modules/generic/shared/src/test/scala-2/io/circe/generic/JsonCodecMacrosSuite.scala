@@ -1,11 +1,11 @@
-package io.circe.generic
+package io.circe013.generic
 
 import cats.kernel.Eq
 import cats.kernel.instances.all._
-import io.circe.{ Decoder, Encoder }
-import io.circe.generic.jsoncodecmacrossuiteaux._
-import io.circe.testing.{ ArbitraryInstances, CodecTests }
-import io.circe.tests.{ CirceSuite, MissingInstances }
+import io.circe013.{ Decoder, Encoder }
+import io.circe013.generic.jsoncodecmacrossuiteaux._
+import io.circe013.testing.{ ArbitraryInstances, CodecTests }
+import io.circe013.tests.{ CirceSuite, MissingInstances }
 import org.scalacheck.{ Arbitrary, Gen }
 
 package object jsoncodecmacrossuiteaux extends AnyRef with ArbitraryInstances with MissingInstances
@@ -76,9 +76,9 @@ package jsoncodecmacrossuiteaux {
 
   // Access modifier
 
-  @JsonCodec private[circe] final case class AccessModifier(a: Int)
+  @JsonCodec private[circe013] final case class AccessModifier(a: Int)
 
-  private[circe] object AccessModifier {
+  private[circe013] object AccessModifier {
     implicit def eqAccessModifier: Eq[AccessModifier] = Eq.fromUniversalEquals
 
     implicit def arbitraryAccessModifier: Arbitrary[AccessModifier] =

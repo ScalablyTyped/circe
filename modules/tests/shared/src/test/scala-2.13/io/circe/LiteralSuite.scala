@@ -1,9 +1,9 @@
-package io.circe
+package io.circe013
 
 import cats.kernel.Eq
 import cats.kernel.instances.all._
-import io.circe.testing.CodecTests
-import io.circe.tests.CirceSuite
+import io.circe013.testing.CodecTests
+import io.circe013.tests.CirceSuite
 import org.scalacheck.{ Arbitrary, Gen }
 
 class LiteralCodecSuite extends CirceSuite {

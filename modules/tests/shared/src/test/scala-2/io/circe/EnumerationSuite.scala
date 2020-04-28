@@ -1,10 +1,10 @@
-package io.circe
+package io.circe013
 
 import cats.kernel.Eq
-import io.circe.parser.parse
-import io.circe.syntax._
-import io.circe.testing.CodecTests
-import io.circe.tests.CirceSuite
+import io.circe013.parser.parse
+import io.circe013.syntax._
+import io.circe013.testing.CodecTests
+import io.circe013.tests.CirceSuite
 import org.scalacheck.{ Arbitrary, Gen }
 
 class EnumerationSuite extends CirceSuite {

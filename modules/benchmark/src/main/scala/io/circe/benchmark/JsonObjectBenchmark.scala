@@ -1,7 +1,7 @@
-package io.circe.benchmark
+package io.circe013.benchmark
 
 import cats.instances.list._
-import io.circe.{ Json, JsonObject }
+import io.circe013.{ Json, JsonObject }
 import java.util.concurrent.TimeUnit
 import org.openjdk.jmh.annotations._
 
@@ -10,7 +10,7 @@ import org.openjdk.jmh.annotations._
  *
  * The following command will run the benchmarks with reasonable settings:
  *
- * > sbt "benchmark/jmh:run -i 10 -wi 10 -f 2 -t 1 io.circe.benchmark.JsonObjectBenchmark"
+ * > sbt "benchmark/jmh:run -i 10 -wi 10 -f 2 -t 1 io.circe013.benchmark.JsonObjectBenchmark"
  */
 @State(Scope.Thread)
 @BenchmarkMode(Array(Mode.Throughput))

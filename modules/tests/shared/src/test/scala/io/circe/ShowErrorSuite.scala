@@ -1,10 +1,10 @@
-package io.circe
+package io.circe013
 
 import cats.kernel.instances.string._
 import cats.syntax.eq._
 import cats.syntax.show._
-import io.circe.CursorOp._
-import io.circe.tests.CirceSuite
+import io.circe013.CursorOp._
+import io.circe013.tests.CirceSuite
 import org.scalacheck.Gen
 
 trait GenCursorOps {

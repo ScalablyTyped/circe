@@ -1,6 +1,6 @@
-package io.circe.generic.simple.util.macros
+package io.circe013.generic.simple.util.macros
 
-import io.circe.{ Codec, Decoder, Encoder }
+import io.circe013.{ Codec, Decoder, Encoder }
 import scala.reflect.macros.blackbox
 
 abstract class JsonCodecMacros {

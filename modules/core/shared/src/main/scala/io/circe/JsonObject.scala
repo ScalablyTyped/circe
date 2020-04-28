@@ -1,4 +1,4 @@
-package io.circe
+package io.circe013
 
 import cats.{ Applicative, Eq, Foldable, Show }
 import cats.data.Kleisli
@@ -30,7 +30,7 @@ sealed abstract class JsonObject extends Serializable {
    *
    * @group Contents
    */
-  private[circe] def applyUnsafe(k: String): Json
+  private[circe013] def applyUnsafe(k: String): Json
 
   /**
    * Return the JSON value associated with the given key.
@@ -183,7 +183,7 @@ sealed abstract class JsonObject extends Serializable {
         }
     }
 
-  private[circe] def appendToFolder(folder: Printer.PrintingFolder): Unit
+  private[circe013] def appendToFolder(folder: Printer.PrintingFolder): Unit
 
   /**
    * @group Other
@@ -245,10 +245,10 @@ object JsonObject {
    */
   final def fromMap(map: Map[String, Json]): JsonObject = fromMapAndVector(map, map.keys.toVector)
 
-  private[circe] final def fromMapAndVector(map: Map[String, Json], keys: Vector[String]): JsonObject =
+  private[circe013] final def fromMapAndVector(map: Map[String, Json], keys: Vector[String]): JsonObject =
     new MapAndVectorJsonObject(map, keys)
 
-  private[circe] final def fromLinkedHashMap(map: LinkedHashMap[String, Json]): JsonObject =
+  private[circe013] final def fromLinkedHashMap(map: LinkedHashMap[String, Json]): JsonObject =
     new LinkedHashMapJsonObject(map)
 
   /**
@@ -268,7 +268,7 @@ object JsonObject {
    * An implementation of [[JsonObject]] built on `java.util.LinkedHashMap`.
    */
   private[this] final class LinkedHashMapJsonObject(fields: LinkedHashMap[String, Json]) extends JsonObject {
-    private[circe] def applyUnsafe(key: String): Json = fields.get(key)
+    private[circe013] def applyUnsafe(key: String): Json = fields.get(key)
     final def apply(k: String): Option[Json] = Option(fields.get(k))
     final def size: Int = fields.size
     final def contains(k: String): Boolean = fields.containsKey(k)
@@ -385,7 +385,7 @@ object JsonObject {
     fields: Map[String, Json],
     orderedKeys: Vector[String]
   ) extends JsonObject {
-    private[circe] def applyUnsafe(key: String): Json = fields(key)
+    private[circe013] def applyUnsafe(key: String): Json = fields(key)
     final def apply(key: String): Option[Json] = fields.get(key)
     final def size: Int = fields.size
     final def contains(key: String): Boolean = fields.contains(key)

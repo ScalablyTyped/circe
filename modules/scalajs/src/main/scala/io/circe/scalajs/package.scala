@@ -1,4 +1,4 @@
-package io.circe
+package io.circe013
 
 import scala.scalajs.js
 import scala.scalajs.js.JSConverters._

@@ -1,11 +1,11 @@
-package io.circe
+package io.circe013
 
 import cats.data.OneAnd
 import scala.collection.Map
 import scala.collection.generic.CanBuildFrom
 import scala.collection.mutable.Builder
 
-private[circe] trait CollectionDecoders {
+private[circe013] trait CollectionDecoders {
 
   /**
    * @note The resulting instance will not be serializable (in the `java.io.Serializable` sense)

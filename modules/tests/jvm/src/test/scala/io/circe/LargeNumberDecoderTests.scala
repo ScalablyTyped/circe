@@ -1,8 +1,8 @@
-package io.circe
+package io.circe013
 
 import cats.instances.all._
-import io.circe.parser.parse
-import io.circe.tests.CirceSuite
+import io.circe013.parser.parse
+import io.circe013.tests.CirceSuite
 
 /**
  * Tests that fail because of bugs (or at least limitations) on Scala.js.

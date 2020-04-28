@@ -55,7 +55,7 @@ circe uses three testing libraries: [Discipline][discipline], [ScalaCheck][scala
 * In general tests live in the `tests` sub-project. This allows e.g. tests for codecs in the core
   module to be able to use the Jawn parser without circular dependencies between sub-projects.
 * For experimental or stand-alone modules, it may be appropriate for tests to live in the project.
-* Most test suites should extend `io.circe.tests.CirceSuite`, which provides many useful type class
+* Most test suites should extend `io.circe013.tests.CirceSuite`, which provides many useful type class
   instances and other tools.
 * Write tests that verify laws using Discipline whenever you can, then property-based tests using
   ScalaCheck, then behavior-driven tests.

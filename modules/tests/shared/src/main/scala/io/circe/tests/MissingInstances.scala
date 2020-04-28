@@ -1,4 +1,4 @@
-package io.circe.tests
+package io.circe013.tests
 
 import cats.kernel.Eq
 import java.util.UUID

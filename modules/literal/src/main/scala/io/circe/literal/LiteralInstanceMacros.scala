@@ -1,4 +1,4 @@
-package io.circe.literal
+package io.circe013.literal
 
 import scala.reflect.macros.whitebox
 
@@ -11,12 +11,12 @@ class LiteralInstanceMacros(val c: whitebox.Context) {
         val name = s"""String("$lit")"""
 
         q"""
-          _root_.io.circe.Decoder.instance[$sType] { c =>
+          _root_.io.circe013.Decoder.instance[$sType] { c =>
             if (c.value.asString.exists(_ == $lit)) {
-              _root_.scala.util.Right[_root_.io.circe.DecodingFailure, $sType]($lit: $sType)
+              _root_.scala.util.Right[_root_.io.circe013.DecodingFailure, $sType]($lit: $sType)
             } else {
               _root_.scala.util.Left(
-                _root_.io.circe.DecodingFailure($name, c.history)
+                _root_.io.circe013.DecodingFailure($name, c.history)
               )
             }
           }
@@ -29,12 +29,12 @@ class LiteralInstanceMacros(val c: whitebox.Context) {
         val name = s"""Double($lit)"""
 
         q"""
-          _root_.io.circe.Decoder.instance[$sType] { c =>
+          _root_.io.circe013.Decoder.instance[$sType] { c =>
             if (c.value.asNumber.map(_.toDouble).exists(_ == $lit)) {
-              _root_.scala.util.Right[_root_.io.circe.DecodingFailure, $sType]($lit: $sType)
+              _root_.scala.util.Right[_root_.io.circe013.DecodingFailure, $sType]($lit: $sType)
             } else {
               _root_.scala.util.Left(
-                _root_.io.circe.DecodingFailure($name, c.history)
+                _root_.io.circe013.DecodingFailure($name, c.history)
               )
             }
           }
@@ -47,12 +47,12 @@ class LiteralInstanceMacros(val c: whitebox.Context) {
         val name = s"""Float($lit)"""
 
         q"""
-          _root_.io.circe.Decoder.instance[$sType] { c =>
+          _root_.io.circe013.Decoder.instance[$sType] { c =>
             if (c.value.asNumber.map(_.toDouble).exists(s => s.toFloat == $lit)) {
-              _root_.scala.util.Right[_root_.io.circe.DecodingFailure, $sType]($lit: $sType)
+              _root_.scala.util.Right[_root_.io.circe013.DecodingFailure, $sType]($lit: $sType)
             } else {
               _root_.scala.util.Left(
-                _root_.io.circe.DecodingFailure($name, c.history)
+                _root_.io.circe013.DecodingFailure($name, c.history)
               )
             }
           }
@@ -65,12 +65,12 @@ class LiteralInstanceMacros(val c: whitebox.Context) {
         val name = s"""Long($lit)"""
 
         q"""
-          _root_.io.circe.Decoder.instance[$sType] { c =>
+          _root_.io.circe013.Decoder.instance[$sType] { c =>
             if (c.value.asNumber.flatMap(_.toLong).exists(_ == $lit)) {
-              _root_.scala.util.Right[_root_.io.circe.DecodingFailure, $sType]($lit: $sType)
+              _root_.scala.util.Right[_root_.io.circe013.DecodingFailure, $sType]($lit: $sType)
             } else {
               _root_.scala.util.Left(
-                _root_.io.circe.DecodingFailure($name, c.history)
+                _root_.io.circe013.DecodingFailure($name, c.history)
               )
             }
           }
@@ -83,12 +83,12 @@ class LiteralInstanceMacros(val c: whitebox.Context) {
         val name = s"""Int($lit)"""
 
         q"""
-          _root_.io.circe.Decoder.instance[$sType] { c =>
+          _root_.io.circe013.Decoder.instance[$sType] { c =>
             if (c.value.asNumber.flatMap(_.toInt).exists(_ == $lit)) {
-              _root_.scala.util.Right[_root_.io.circe.DecodingFailure, $sType]($lit: $sType)
+              _root_.scala.util.Right[_root_.io.circe013.DecodingFailure, $sType]($lit: $sType)
             } else {
               _root_.scala.util.Left(
-                _root_.io.circe.DecodingFailure($name, c.history)
+                _root_.io.circe013.DecodingFailure($name, c.history)
               )
             }
           }
@@ -101,12 +101,12 @@ class LiteralInstanceMacros(val c: whitebox.Context) {
         val name = s"""Char($lit)"""
 
         q"""
-          _root_.io.circe.Decoder.instance[$sType] { c =>
+          _root_.io.circe013.Decoder.instance[$sType] { c =>
             if (c.value.asString.exists(s => s.length == 1 && s.charAt(0) == $lit)) {
-              _root_.scala.util.Right[_root_.io.circe.DecodingFailure, $sType]($lit: $sType)
+              _root_.scala.util.Right[_root_.io.circe013.DecodingFailure, $sType]($lit: $sType)
             } else {
               _root_.scala.util.Left(
-                _root_.io.circe.DecodingFailure($name, c.history)
+                _root_.io.circe013.DecodingFailure($name, c.history)
               )
             }
           }
@@ -119,12 +119,12 @@ class LiteralInstanceMacros(val c: whitebox.Context) {
         val name = s"""Boolean($lit)"""
 
         q"""
-          _root_.io.circe.Decoder.instance[$sType] { c =>
+          _root_.io.circe013.Decoder.instance[$sType] { c =>
             if (c.value.asBoolean.exists(_ == $lit)) {
-              _root_.scala.util.Right[_root_.io.circe.DecodingFailure, $sType]($lit: $sType)
+              _root_.scala.util.Right[_root_.io.circe013.DecodingFailure, $sType]($lit: $sType)
             } else {
               _root_.scala.util.Left(
-                _root_.io.circe.DecodingFailure($name, c.history)
+                _root_.io.circe013.DecodingFailure($name, c.history)
               )
             }
           }
@@ -134,42 +134,42 @@ class LiteralInstanceMacros(val c: whitebox.Context) {
   final def encodeLiteralString[S <: String: c.WeakTypeTag]: Tree =
     weakTypeOf[S].dealias match {
       case sType @ ConstantType(Constant(lit: String)) =>
-        q"_root_.io.circe.Encoder.apply[_root_.java.lang.String].contramap[$sType](_root_.scala.Predef.identity)"
+        q"_root_.io.circe013.Encoder.apply[_root_.java.lang.String].contramap[$sType](_root_.scala.Predef.identity)"
     }
 
   final def encodeLiteralDouble[S <: Double: c.WeakTypeTag]: Tree =
     weakTypeOf[S].dealias match {
       case sType @ ConstantType(Constant(lit: Double)) =>
-        q"_root_.io.circe.Encoder.apply[_root_.scala.Double].contramap[$sType](_root_.scala.Predef.identity)"
+        q"_root_.io.circe013.Encoder.apply[_root_.scala.Double].contramap[$sType](_root_.scala.Predef.identity)"
     }
 
   final def encodeLiteralFloat[S <: Float: c.WeakTypeTag]: Tree =
     weakTypeOf[S].dealias match {
       case sType @ ConstantType(Constant(lit: Float)) =>
-        q"_root_.io.circe.Encoder.apply[_root_.scala.Float].contramap[$sType](_root_.scala.Predef.identity)"
+        q"_root_.io.circe013.Encoder.apply[_root_.scala.Float].contramap[$sType](_root_.scala.Predef.identity)"
     }
 
   final def encodeLiteralLong[S <: Long: c.WeakTypeTag]: Tree =
     weakTypeOf[S].dealias match {
       case sType @ ConstantType(Constant(lit: Long)) =>
-        q"_root_.io.circe.Encoder.apply[_root_.scala.Long].contramap[$sType](_root_.scala.Predef.identity)"
+        q"_root_.io.circe013.Encoder.apply[_root_.scala.Long].contramap[$sType](_root_.scala.Predef.identity)"
     }
 
   final def encodeLiteralInt[S <: Int: c.WeakTypeTag]: Tree =
     weakTypeOf[S].dealias match {
       case sType @ ConstantType(Constant(lit: Int)) =>
-        q"_root_.io.circe.Encoder.apply[_root_.scala.Int].contramap[$sType](_root_.scala.Predef.identity)"
+        q"_root_.io.circe013.Encoder.apply[_root_.scala.Int].contramap[$sType](_root_.scala.Predef.identity)"
     }
 
   final def encodeLiteralChar[S <: Char: c.WeakTypeTag]: Tree =
     weakTypeOf[S].dealias match {
       case sType @ ConstantType(Constant(lit: Char)) =>
-        q"_root_.io.circe.Encoder.apply[_root_.scala.Char].contramap[$sType](_root_.scala.Predef.identity)"
+        q"_root_.io.circe013.Encoder.apply[_root_.scala.Char].contramap[$sType](_root_.scala.Predef.identity)"
     }
 
   final def encodeLiteralBoolean[S <: Boolean: c.WeakTypeTag]: Tree =
     weakTypeOf[S].dealias match {
       case sType @ ConstantType(Constant(lit: Boolean)) =>
-        q"_root_.io.circe.Encoder.apply[_root_.scala.Boolean].contramap[$sType](_root_.scala.Predef.identity)"
+        q"_root_.io.circe013.Encoder.apply[_root_.scala.Boolean].contramap[$sType](_root_.scala.Predef.identity)"
     }
 }

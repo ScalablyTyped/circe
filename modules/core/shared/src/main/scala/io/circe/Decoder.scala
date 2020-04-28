@@ -1,4 +1,4 @@
-package io.circe
+package io.circe013
 
 import cats.{ ApplicativeError, MonadError, SemigroupK }
 import cats.data.{
@@ -16,7 +16,7 @@ import cats.data.{
 import cats.data.Validated.{ Invalid, Valid }
 import cats.instances.either.{ catsStdInstancesForEither, catsStdSemigroupKForEither }
 import cats.kernel.Order
-import io.circe.`export`.Exported
+import io.circe013.`export`.Exported
 import java.io.Serializable
 import java.time.{
   DateTimeException,
@@ -412,7 +412,7 @@ trait Decoder[A] extends Serializable { self =>
  * discriminators. If you want instances for these types you can include the following import in
  * your program:
  * {{{
- *   import io.circe.disjunctionCodecs._
+ *   import io.circe013.disjunctionCodecs._
  * }}}
  * @groupprio Disjunction 4
  *
@@ -468,7 +468,7 @@ object Decoder
       NonEmptyList.catsDataSemigroupForNonEmptyList[DecodingFailure]
     )
 
-  private[circe] val resultSemigroupK: SemigroupK[Result] = catsStdSemigroupKForEither[DecodingFailure]
+  private[circe013] val resultSemigroupK: SemigroupK[Result] = catsStdSemigroupKForEither[DecodingFailure]
 
   private[this] abstract class DecoderWithFailure[A](name: String) extends Decoder[A] {
     final def fail(c: HCursor): Result[A] = Left(DecodingFailure(name, c.history))
@@ -921,8 +921,8 @@ object Decoder
   private[this] final val rightNone: Either[DecodingFailure, Option[Nothing]] = Right(None)
   private[this] final val validNone: ValidatedNel[DecodingFailure, Option[Nothing]] = Validated.valid(None)
 
-  private[circe] final val keyMissingNone: Decoder.Result[Option[Nothing]] = Right(None)
-  private[circe] final val keyMissingNoneAccumulating: AccumulatingResult[Option[Nothing]] =
+  private[circe013] final val keyMissingNone: Decoder.Result[Option[Nothing]] = Right(None)
+  private[circe013] final val keyMissingNoneAccumulating: AccumulatingResult[Option[Nothing]] =
     Validated.valid(None)
 
   /**
@@ -1446,7 +1446,7 @@ object Decoder
   }
 }
 
-private[circe] trait LowPriorityDecoders {
+private[circe013] trait LowPriorityDecoders {
 
   /**
    * @group Prioritization

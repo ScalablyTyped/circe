@@ -1,4 +1,4 @@
-package io.circe
+package io.circe013
 
 /**
  * On the JVM this trait contains tests that read an example resource file.

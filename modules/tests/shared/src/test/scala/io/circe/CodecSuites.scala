@@ -1,4 +1,4 @@
-package io.circe
+package io.circe013
 
 import cats.data.{
   Chain,
@@ -15,9 +15,9 @@ import cats.kernel.Eq
 import cats.laws.discipline.arbitrary._
 import cats.syntax.contravariant._
 import cats.syntax.eq._
-import io.circe.testing.CodecTests
-import io.circe.tests.CirceSuite
-import io.circe.tests.examples.Foo
+import io.circe013.testing.CodecTests
+import io.circe013.tests.CirceSuite
+import io.circe013.tests.examples.Foo
 import java.util.UUID
 import org.scalacheck.{ Arbitrary, Gen }
 import scala.collection.immutable.SortedMap

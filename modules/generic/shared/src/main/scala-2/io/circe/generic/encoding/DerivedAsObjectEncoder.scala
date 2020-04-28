@@ -1,6 +1,6 @@
-package io.circe.generic.encoding
+package io.circe013.generic.encoding
 
-import io.circe.{ Encoder, JsonObject }
+import io.circe013.{ Encoder, JsonObject }
 import shapeless.{ LabelledGeneric, Lazy }
 
 abstract class DerivedAsObjectEncoder[A] extends Encoder.AsObject[A]

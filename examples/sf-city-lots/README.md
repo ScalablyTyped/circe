@@ -36,7 +36,7 @@ with `sbt console`. For case classes with companion objects, you'll need to use 
 definitions evaluated together.
 
 ```scala
-import io.circe.Decoder, io.circe.generic.auto._
+import io.circe013.Decoder, io.circe013.generic.auto._
 ```
 
 If we were on Scala 2.11, we'd also need to import `cats.syntax.either._` here since we're
@@ -85,7 +85,7 @@ object Geometry {
 
 Note that we don't explicitly give decoder instances for `Polygon` or `MultiPolygon`—these are very
 simple types, and generic derivation will work for them. If we wanted to avoid generic derivation
-entirely, we could skip the `io.circe.generic.auto._` import above and write instances for these two
+entirely, we could skip the `io.circe013.generic.auto._` import above and write instances for these two
 case classes by hand:
 
 ```scala
@@ -158,7 +158,7 @@ file.
 
 ```scala
 import cats.effect.IO
-import io.circe.iteratee.{ byteArrayParser, decoder }
+import io.circe013.iteratee.{ byteArrayParser, decoder }
 import io.iteratee.{ Enumeratee, Iteratee }
 import io.iteratee.files.readBytes
 import java.io.File

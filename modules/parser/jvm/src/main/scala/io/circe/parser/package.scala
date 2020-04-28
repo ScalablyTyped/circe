@@ -1,6 +1,6 @@
-package io.circe
+package io.circe013
 
-import io.circe.jawn.JawnParser
+import io.circe013.jawn.JawnParser
 
 package object parser extends Parser {
   private[this] val parser = new JawnParser

@@ -1,7 +1,7 @@
-package io.circe
+package io.circe013
 
 import cats.Applicative
-import io.circe.cursor.{ ArrayCursor, ObjectCursor, TopCursor }
+import io.circe013.cursor.{ ArrayCursor, ObjectCursor, TopCursor }
 import scala.annotation.tailrec
 
 abstract class HCursor(lastCursor: HCursor, lastOp: CursorOp) extends ACursor(lastCursor, lastOp) {

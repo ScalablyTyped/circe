@@ -1,3 +1,3 @@
-package io.circe
+package io.circe013
 
-private[circe] trait EnumerationEncoders
+private[circe013] trait EnumerationEncoders

@@ -1,4 +1,4 @@
-package io.circe.generic
+package io.circe013.generic
 
 package object encoding {
   @deprecated("Use DerivedAsObjectEncoder", "0.12.0")

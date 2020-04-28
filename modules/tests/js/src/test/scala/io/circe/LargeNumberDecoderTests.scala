@@ -1,6 +1,6 @@
-package io.circe
+package io.circe013
 
-import io.circe.tests.CirceSuite
+import io.circe013.tests.CirceSuite
 
 /**
  * On the JVM this trait contains tests that fail because of bugs (or at least

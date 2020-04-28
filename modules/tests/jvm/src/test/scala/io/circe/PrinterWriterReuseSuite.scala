@@ -1,8 +1,8 @@
-package io.circe
+package io.circe013
 
 import cats.instances.all._
 import cats.syntax.eq._
-import io.circe.tests.CirceSuite
+import io.circe013.tests.CirceSuite
 import org.scalatest.concurrent.ScalaFutures
 import org.scalatest.time.{ Millis, Span }
 import scala.concurrent.Future

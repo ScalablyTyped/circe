@@ -87,7 +87,7 @@ lots of more-or-less well-considered personal preferences that are subject to ch
     This is line with the general principle that magic should be opt-in.
 
     What this means concretely: If you want to be able to write things like
-    `Map("foo" -> List(1, 2, 3)).asJson`, you'll need to import `io.circe.syntax._`.
+    `Map("foo" -> List(1, 2, 3)).asJson`, you'll need to import `io.circe013.syntax._`.
 
 7. **Runtime reflection: not even once.**
     As [Rob Norris][tpolecat] [says][no-reflection]: "programs should be invariant under rename
@@ -126,7 +126,7 @@ lots of more-or-less well-considered personal preferences that are subject to ch
     kick in.
 
 11. **Not all ADTs should expose their constructors.**
-    In some cases, including most significantly here the `io.circe.Json` type, we don't want to
+    In some cases, including most significantly here the `io.circe013.Json` type, we don't want to
     encourage users to think of the ADT leaves as having meaningful types. A JSON value "is" a
     boolean or a string or a unit or a `Seq[Json]` or a `JsonNumber` or a `JsonObject`. Introducing
     types like `JString`, `JNumber`, etc. into the public API just confuses things.

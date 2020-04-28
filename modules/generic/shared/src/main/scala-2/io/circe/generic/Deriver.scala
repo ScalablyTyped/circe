@@ -1,9 +1,9 @@
-package io.circe.generic
+package io.circe013.generic
 
-import io.circe.generic.codec.{ DerivedAsObjectCodec, ReprAsObjectCodec }
-import io.circe.generic.decoding.{ DerivedDecoder, ReprDecoder }
-import io.circe.generic.encoding.{ DerivedAsObjectEncoder, ReprAsObjectEncoder }
-import io.circe.generic.util.macros.DerivationMacros
+import io.circe013.generic.codec.{ DerivedAsObjectCodec, ReprAsObjectCodec }
+import io.circe013.generic.decoding.{ DerivedDecoder, ReprDecoder }
+import io.circe013.generic.encoding.{ DerivedAsObjectEncoder, ReprAsObjectEncoder }
+import io.circe013.generic.util.macros.DerivationMacros
 import scala.reflect.macros.whitebox
 
 class Deriver(val c: whitebox.Context)
@@ -29,8 +29,8 @@ class Deriver(val c: whitebox.Context)
   protected[this] val DE: TypeTag[DerivedAsObjectEncoder[_]] = c.typeTag
   protected[this] val DC: TypeTag[DerivedAsObjectCodec[_]] = c.typeTag
 
-  protected[this] val hnilReprDecoder: Tree = q"_root_.io.circe.generic.decoding.ReprDecoder.hnilReprDecoder"
-  protected[this] val hnilReprCodec: Tree = q"_root_.io.circe.generic.codec.ReprAsObjectCodec.hnilReprCodec"
+  protected[this] val hnilReprDecoder: Tree = q"_root_.io.circe013.generic.decoding.ReprDecoder.hnilReprDecoder"
+  protected[this] val hnilReprCodec: Tree = q"_root_.io.circe013.generic.codec.ReprAsObjectCodec.hnilReprCodec"
 
   protected[this] val decodeMethodName: TermName = TermName("apply")
   protected[this] val decodeAccumulatingMethodName: TermName = TermName("decodeAccumulating")
@@ -62,5 +62,5 @@ class Deriver(val c: whitebox.Context)
     q"($name, $encode($value))"
 
   protected[this] def encodeSubtype(name: String, encode: TermName, value: TermName): Tree =
-    q"_root_.io.circe.JsonObject.singleton($name, $encode($value))"
+    q"_root_.io.circe013.JsonObject.singleton($name, $encode($value))"
 }

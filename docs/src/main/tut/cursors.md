@@ -13,7 +13,7 @@ Suppose we have the following JSON document:
 
 ```scala mdoc:silent
 import cats.syntax.either._
-import io.circe._, io.circe.parser._
+import io.circe013._, io.circe013.parser._
 
 val json: String = """
   {

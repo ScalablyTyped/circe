@@ -1,4 +1,4 @@
-package io.circe
+package io.circe013
 
 import cats.data.{ NonEmptyList, Validated, ValidatedNel }
 import java.io.Serializable

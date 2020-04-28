@@ -1,4 +1,4 @@
-package io.circe
+package io.circe013
 
 import cats.{ Eq, Show }
 import java.io.Serializable

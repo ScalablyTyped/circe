@@ -1,7 +1,7 @@
-package io.circe.tests.examples
+package io.circe013.tests.examples
 
 import cats.kernel.Eq
-import io.circe.{ Decoder, Encoder }
+import io.circe013.{ Decoder, Encoder }
 import org.scalacheck.Arbitrary
 
 case class OptionalString(value: String) {

@@ -1,8 +1,8 @@
-package io.circe
+package io.circe013
 
 import cats.kernel.Eq
-import io.circe.testing.CodecTests
-import io.circe.tests.CirceSuite
+import io.circe013.testing.CodecTests
+import io.circe013.tests.CirceSuite
 import java.time._
 import org.scalacheck.{ Arbitrary, Gen }
 import org.scalacheck.Arbitrary.arbitrary

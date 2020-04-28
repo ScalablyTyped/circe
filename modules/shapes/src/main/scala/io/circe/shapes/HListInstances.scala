@@ -1,6 +1,6 @@
-package io.circe.shapes
+package io.circe013.shapes
 
-import io.circe.{ Decoder, DecodingFailure, Encoder, HCursor, Json, JsonObject }
+import io.circe013.{ Decoder, DecodingFailure, Encoder, HCursor, Json, JsonObject }
 import shapeless.{ ::, HList, HNil }
 
 trait HListInstances extends LowPriorityHListInstances {

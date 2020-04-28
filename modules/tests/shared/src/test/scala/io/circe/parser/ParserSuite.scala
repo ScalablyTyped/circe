@@ -1,8 +1,8 @@
-package io.circe.parser
+package io.circe013.parser
 
-import io.circe.Json
-import io.circe.testing.ParserTests
-import io.circe.tests.CirceSuite
+import io.circe013.Json
+import io.circe013.testing.ParserTests
+import io.circe013.tests.CirceSuite
 
 class ParserSuite extends CirceSuite {
   checkAll("Parser", ParserTests(`package`).fromString)

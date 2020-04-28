@@ -1,6 +1,6 @@
-package io.circe.jawn
+package io.circe013.jawn
 
-import io.circe.{ Json, JsonNumber, JsonObject }
+import io.circe013.{ Json, JsonNumber, JsonObject }
 import java.io.Serializable
 import java.util.LinkedHashMap
 import org.typelevel.jawn.{ FContext, Facade, SupportParser }

@@ -1,6 +1,6 @@
-package io.circe
+package io.circe013
 
-private[circe] trait LiteralEncoders {
+private[circe013] trait LiteralEncoders {
   private[this] final class LiteralEncoder[L](private[this] final val encoded: Json) extends Encoder[L] {
     final def apply(a: L): Json = encoded
   }

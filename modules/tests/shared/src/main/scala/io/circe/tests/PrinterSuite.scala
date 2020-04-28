@@ -1,8 +1,8 @@
-package io.circe.tests
+package io.circe013.tests
 
 import cats.kernel.instances.all._
-import io.circe.{ Json, Parser, Printer }
-import io.circe.testing.PrinterTests
+import io.circe013.{ Json, Parser, Printer }
+import io.circe013.testing.PrinterTests
 import java.nio.charset.StandardCharsets.UTF_8
 
 class PrinterSuite(val printer: Printer, val parser: Parser) extends CirceSuite with PlatformSpecificPrinterTests {

@@ -1,8 +1,8 @@
-package io.circe
+package io.circe013
 
 import cats.laws.discipline.SerializableTests
 import cats.kernel.laws.SerializableLaws
-import io.circe.tests.CirceSuite
+import io.circe013.tests.CirceSuite
 
 class SerializableSuite extends CirceSuite {
   "Json" should "be serializable" in forAll { (j: Json) =>

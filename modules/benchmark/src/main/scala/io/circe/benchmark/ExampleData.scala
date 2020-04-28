@@ -1,7 +1,7 @@
-package io.circe.benchmark
+package io.circe013.benchmark
 
-import io.circe.Json
-import io.circe.syntax._
+import io.circe013.Json
+import io.circe013.syntax._
 
 class ExampleData {
   val ints: List[Int] = (0 to 1000).toList

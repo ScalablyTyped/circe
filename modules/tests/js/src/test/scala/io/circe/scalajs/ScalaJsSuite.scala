@@ -1,10 +1,10 @@
-package io.circe.scalajs
+package io.circe013.scalajs
 
 import cats.instances.all._
 import cats.syntax.eq._
-import io.circe.{ Decoder, Encoder, Json }
-import io.circe.syntax._
-import io.circe.tests.CirceSuite
+import io.circe013.{ Decoder, Encoder, Json }
+import io.circe013.syntax._
+import io.circe013.tests.CirceSuite
 import scala.scalajs.js
 import scalajs.js.Dynamic
 

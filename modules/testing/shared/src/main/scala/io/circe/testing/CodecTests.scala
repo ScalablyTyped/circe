@@ -1,11 +1,11 @@
-package io.circe.testing
+package io.circe013.testing
 
 import cats.instances.either._
 import cats.kernel.Eq
 import cats.kernel.laws.SerializableLaws
 import cats.laws._
 import cats.laws.discipline._
-import io.circe.{ Decoder, Encoder, Json }
+import io.circe013.{ Decoder, Encoder, Json }
 import org.scalacheck.{ Arbitrary, Prop, Shrink }
 import org.typelevel.discipline.Laws
 

@@ -7,9 +7,9 @@ so you can just add the following to your build:
 val circeVersion = "0.12.3"
 
 libraryDependencies ++= Seq(
-  "io.circe" %% "circe-core",
-  "io.circe" %% "circe-generic",
-  "io.circe" %% "circe-parser"
+  "io.circe013" %% "circe-core",
+  "io.circe013" %% "circe-generic",
+  "io.circe013" %% "circe-parser"
 ).map(_ % circeVersion)
 ```
 
@@ -32,7 +32,7 @@ root directory of this repository):
 
 {% scalafiddle %}
 ```scala
-import io.circe._, io.circe.generic.auto._, io.circe.parser._, io.circe.syntax._
+import io.circe013._, io.circe013.generic.auto._, io.circe013.parser._, io.circe013.syntax._
 
 sealed trait Foo
 case class Bar(xs: Vector[String]) extends Foo

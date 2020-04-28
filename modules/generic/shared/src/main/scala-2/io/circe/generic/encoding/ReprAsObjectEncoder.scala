@@ -1,7 +1,7 @@
-package io.circe.generic.encoding
+package io.circe013.generic.encoding
 
-import io.circe.Encoder
-import io.circe.generic.Deriver
+import io.circe013.Encoder
+import io.circe013.generic.Deriver
 import scala.language.experimental.macros
 
 /**

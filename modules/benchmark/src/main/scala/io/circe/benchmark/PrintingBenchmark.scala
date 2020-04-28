@@ -1,6 +1,6 @@
-package io.circe.benchmark
+package io.circe013.benchmark
 
-import io.circe.Printer
+import io.circe013.Printer
 import java.nio.ByteBuffer
 import java.util.concurrent.TimeUnit
 import org.openjdk.jmh.annotations._
@@ -10,7 +10,7 @@ import org.openjdk.jmh.annotations._
  *
  * The following command will run the benchmarks with reasonable settings:
  *
- * > sbt "benchmark/jmh:run -i 10 -wi 10 -f 2 -t 1 io.circe.benchmark.PrintingBenchmark"
+ * > sbt "benchmark/jmh:run -i 10 -wi 10 -f 2 -t 1 io.circe013.benchmark.PrintingBenchmark"
  */
 @State(Scope.Thread)
 @BenchmarkMode(Array(Mode.Throughput))

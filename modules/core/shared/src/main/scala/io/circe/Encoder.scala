@@ -1,8 +1,8 @@
-package io.circe
+package io.circe013
 
 import cats.{ Contravariant, Foldable }
 import cats.data.{ Chain, NonEmptyChain, NonEmptyList, NonEmptyMap, NonEmptySet, NonEmptyVector, OneAnd, Validated }
-import io.circe.`export`.Exported
+import io.circe013.`export`.Exported
 import java.io.Serializable
 import java.time.{
   Duration,
@@ -80,7 +80,7 @@ trait Encoder[A] extends Serializable { self =>
  * discriminators. If you want instances for these types you can include the following import in
  * your program:
  * {{{
- *   import io.circe.disjunctionCodecs._
+ *   import io.circe013.disjunctionCodecs._
  * }}}
  * @groupprio Disjunction 4
  *
@@ -727,7 +727,7 @@ object Encoder
     final def apply[A](implicit instance: AsRoot[A]): AsRoot[A] = instance
   }
 
-  private[circe] class LowPriorityAsRootEncoders {
+  private[circe013] class LowPriorityAsRootEncoders {
 
     /**
      * @group Prioritization
@@ -807,7 +807,7 @@ object Encoder
     }
   }
 
-  private[circe] class LowPriorityAsArrayEncoders {
+  private[circe013] class LowPriorityAsArrayEncoders {
 
     /**
      * @group Prioritization
@@ -887,7 +887,7 @@ object Encoder
     }
   }
 
-  private[circe] class LowPriorityAsObjectEncoders {
+  private[circe013] class LowPriorityAsObjectEncoders {
 
     /**
      * @group Prioritization
@@ -899,7 +899,7 @@ object Encoder
   }
 }
 
-private[circe] trait MidPriorityEncoders extends LowPriorityEncoders {
+private[circe013] trait MidPriorityEncoders extends LowPriorityEncoders {
 
   /**
    * @group Collection
@@ -928,7 +928,7 @@ private[circe] trait MidPriorityEncoders extends LowPriorityEncoders {
   }
 }
 
-private[circe] trait LowPriorityEncoders {
+private[circe013] trait LowPriorityEncoders {
 
   /**
    * @group Prioritization

@@ -10,7 +10,7 @@ If you want to write your own codec instead of using automatic or semi-automatic
 Firstly, you can write a new `Encoder[A]` and `Decoder[A]` from scratch:
 
 ```scala mdoc
-import io.circe.{ Decoder, Encoder, HCursor, Json }
+import io.circe013.{ Decoder, Encoder, HCursor, Json }
 
 class Thing(val foo: String, val bar: Int)
 
@@ -36,7 +36,7 @@ But in many cases you might find it more convenient to piggyback on top of the d
 already available. For example, a codec for `java.time.Instant` might look like this:
 
 ```scala mdoc
-import io.circe.{ Decoder, Encoder }
+import io.circe013.{ Decoder, Encoder }
 import java.time.Instant
 import scala.util.Try
 
@@ -50,8 +50,8 @@ implicit val decodeInstant: Decoder[Instant] = Decoder.decodeString.emapTry { st
 #### Older scala versions
 
 If you are using custom codecs and an older versions of scala (below 2.12) and you get errors like 
-this `value flatMap is not a member of io.circe.Decoder.Result[Option[String]]` or 
-`value map is not a member of io.circe.Decoder.Result[Option[String]]` then you need to use the 
+this `value flatMap is not a member of io.circe013.Decoder.Result[Option[String]]` or 
+`value map is not a member of io.circe013.Decoder.Result[Option[String]]` then you need to use the 
 following import: `import cats.syntax.either._` to fix this.
 
 ### Custom key types
@@ -62,7 +62,7 @@ you need to provide a `KeyEncoder` and/or `KeyDecoder` for your custom key type.
 For example:
 
 ```scala mdoc
-import io.circe._, io.circe.syntax._
+import io.circe013._, io.circe013.syntax._
 
 case class Foo(value: String)
 
@@ -94,7 +94,7 @@ In many cases the transformation is as simple as going from camel case to snake 
 all you need is a custom implicit configuration:
 
 ```scala mdoc
-import io.circe.generic.extras._, io.circe.syntax._
+import io.circe013.generic.extras._, io.circe013.syntax._
 
 implicit val config: Configuration = Configuration.default.withSnakeCaseMemberNames
 
@@ -106,7 +106,7 @@ User("Foo", "McBar").asJson
 In other cases you may need more complex mappings. These can be provided as a function:
 
 ```scala mdoc:reset
-import io.circe.generic.extras._, io.circe.syntax._
+import io.circe013.generic.extras._, io.circe013.syntax._
 
 implicit val config: Configuration = Configuration.default.copy(
   transformMemberNames = {
@@ -123,7 +123,7 @@ Bar(13, "Qux").asJson
 Since this is a common use case, we also support for mapping member names via an annotation:
 
 ```scala mdoc:reset
-import io.circe.generic.extras._, io.circe.syntax._
+import io.circe013.generic.extras._, io.circe013.syntax._
 
 implicit val config: Configuration = Configuration.default
 
@@ -136,7 +136,7 @@ It's worth noting that if you don't want to use the experimental generic-extras 
 completely unmagical `forProductN` version isn't really that much of a burden:
 
 ```scala mdoc:reset
-import io.circe.Encoder, io.circe.syntax._
+import io.circe013.Encoder, io.circe013.syntax._
 
 case class User(firstName: String, lastName: String)
 case class Bar(i: Int, s: String)

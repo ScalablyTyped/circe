@@ -1,4 +1,4 @@
-package io.circe
+package io.circe013
 
 import cats.data.Chain
 import cats.kernel.instances.float._
@@ -10,8 +10,8 @@ import cats.kernel.instances.tuple._
 import cats.laws.discipline.arbitrary._
 import cats.laws.discipline.ContravariantTests
 import cats.syntax.eq._
-import io.circe.syntax._
-import io.circe.tests.CirceSuite
+import io.circe013.syntax._
+import io.circe013.tests.CirceSuite
 import org.scalacheck.Arbitrary
 import scala.collection.SortedMap
 

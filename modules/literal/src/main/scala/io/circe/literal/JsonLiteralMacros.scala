@@ -1,4 +1,4 @@
-package io.circe.literal
+package io.circe013.literal
 
 import java.io.{ PrintWriter, StringWriter }
 import java.lang.reflect.{ InvocationHandler, Method, Proxy }
@@ -16,8 +16,8 @@ class JsonLiteralMacros(val c: blackbox.Context) {
   private[this] class Replacement(val placeholder: String, argument: Tree) {
     private[this] val argumentType = c.typecheck(argument).tpe
 
-    def asJson: Tree = q"_root_.io.circe.Encoder[${argumentType.widen}].apply($argument)"
-    def asKey: Tree = q"_root_.io.circe.KeyEncoder[${argumentType.widen}].apply($argument)"
+    def asJson: Tree = q"_root_.io.circe013.Encoder[${argumentType.widen}].apply($argument)"
+    def asKey: Tree = q"_root_.io.circe013.KeyEncoder[${argumentType.widen}].apply($argument)"
   }
 
   private[this] object Replacement {
@@ -49,7 +49,7 @@ class JsonLiteralMacros(val c: blackbox.Context) {
       replacements.find(_.placeholder == s).fold(q"$s")(_.asKey)
 
     protected[this] final def toJsonString(s: CharSequence): Tree =
-      replacements.find(_.placeholder == s).fold(q"_root_.io.circe.Json.fromString(${s.toString})")(_.asJson)
+      replacements.find(_.placeholder == s).fold(q"_root_.io.circe013.Json.fromString(${s.toString})")(_.asJson)
 
     final def asProxy(cls: Class[_]): Object = Proxy.newProxyInstance(getClass.getClassLoader, Array(cls), this)
   }
@@ -84,12 +84,12 @@ class JsonLiteralMacros(val c: blackbox.Context) {
     private[this] var values: List[Tree] = Nil
 
     protected[this] val invokeWithoutArgs: String => Object = {
-      case "finish" => q"_root_.io.circe.Json.arr(..$values)"
+      case "finish" => q"_root_.io.circe013.Json.arr(..$values)"
       case "isObj"  => java.lang.Boolean.FALSE
     }
 
     protected[this] val invokeWithArgs: (String, Array[Class[_]], Array[Object]) => Object = {
-      case ("finish", _, _) => q"_root_.io.circe.Json.arr(..$values)"
+      case ("finish", _, _) => q"_root_.io.circe013.Json.arr(..$values)"
       case ("isObj", _, _)  => java.lang.Boolean.FALSE
       case ("add", Array(cls), Array(arg: CharSequence)) if cls == classOf[CharSequence] =>
         values = values :+ toJsonString(arg.toString)
@@ -111,12 +111,12 @@ class JsonLiteralMacros(val c: blackbox.Context) {
     private[this] var fields: List[Tree] = Nil
 
     protected[this] val invokeWithoutArgs: String => Object = {
-      case "finish" => q"_root_.io.circe.Json.obj(..$fields)"
+      case "finish" => q"_root_.io.circe013.Json.obj(..$fields)"
       case "isObj"  => java.lang.Boolean.TRUE
     }
 
     protected[this] val invokeWithArgs: (String, Array[Class[_]], Array[Object]) => Object = {
-      case ("finish", _, _) => q"_root_.io.circe.Json.obj(..$fields)"
+      case ("finish", _, _) => q"_root_.io.circe013.Json.obj(..$fields)"
       case ("isObj", _, _)  => java.lang.Boolean.TRUE
       case ("add", Array(cls), Array(arg: CharSequence)) if cls == classOf[CharSequence] =>
         if (key.eq(null)) {
@@ -153,9 +153,9 @@ class JsonLiteralMacros(val c: blackbox.Context) {
 
   private[this] class TreeFacadeHandler(replacements: Seq[Replacement]) extends Handler(replacements) {
     protected[this] val invokeWithoutArgs: String => Object = {
-      case "jnull"         => q"_root_.io.circe.Json.Null"
-      case "jfalse"        => q"_root_.io.circe.Json.False"
-      case "jtrue"         => q"_root_.io.circe.Json.True"
+      case "jnull"         => q"_root_.io.circe013.Json.Null"
+      case "jfalse"        => q"_root_.io.circe013.Json.False"
+      case "jtrue"         => q"_root_.io.circe013.Json.True"
       case "singleContext" => new SingleContextHandler(replacements).asProxy(jawnFContextClass)
       case "arrayContext"  => new ArrayContextHandler(replacements).asProxy(jawnFContextClass)
       case "objectContext" => new ObjectContextHandler(replacements).asProxy(jawnFContextClass)
@@ -163,9 +163,9 @@ class JsonLiteralMacros(val c: blackbox.Context) {
 
     protected[this] val invokeWithArgs: (String, Array[Class[_]], Array[Object]) => Object = {
       // format: off
-      case ("jnull", _, _)         => q"_root_.io.circe.Json.Null"
-      case ("jfalse", _, _)        => q"_root_.io.circe.Json.False"
-      case ("jtrue", _, _)         => q"_root_.io.circe.Json.True"
+      case ("jnull", _, _)         => q"_root_.io.circe013.Json.Null"
+      case ("jfalse", _, _)        => q"_root_.io.circe013.Json.False"
+      case ("jtrue", _, _)         => q"_root_.io.circe013.Json.True"
       case ("singleContext", _, _) => new SingleContextHandler(replacements).asProxy(jawnFContextClass)
       case ("arrayContext", _, _)  => new ArrayContextHandler(replacements).asProxy(jawnFContextClass)
       case ("objectContext", _, _) => new ObjectContextHandler(replacements).asProxy(jawnFContextClass)
@@ -175,16 +175,16 @@ class JsonLiteralMacros(val c: blackbox.Context) {
       case ("jnum", Array(clsS, clsDecIndex, clsExpIndex), Array(s: CharSequence, decIndex, expIndex))
           if clsS == classOf[CharSequence] && clsDecIndex == classOf[Int] && clsExpIndex == classOf[Int] =>
         if (decIndex.asInstanceOf[Int] < 0 && expIndex.asInstanceOf[Int] < 0) {
-          q"_root_.io.circe.Json.fromJsonNumber(_root_.io.circe.JsonNumber.fromIntegralStringUnsafe(${s.toString}))"
+          q"_root_.io.circe013.Json.fromJsonNumber(_root_.io.circe013.JsonNumber.fromIntegralStringUnsafe(${s.toString}))"
         } else {
-          q"_root_.io.circe.Json.fromJsonNumber(_root_.io.circe.JsonNumber.fromDecimalStringUnsafe(${s.toString}))"
+          q"_root_.io.circe013.Json.fromJsonNumber(_root_.io.circe013.JsonNumber.fromDecimalStringUnsafe(${s.toString}))"
         }
       case ("jnum", Array(clsS, clsDecIndex, clsExpIndex, _), Array(s: CharSequence, decIndex, expIndex, _))
           if clsS == classOf[CharSequence] && clsDecIndex == classOf[Int] && clsExpIndex == classOf[Int] =>
         if (decIndex.asInstanceOf[Int] < 0 && expIndex.asInstanceOf[Int] < 0) {
-          q"_root_.io.circe.Json.fromJsonNumber(_root_.io.circe.JsonNumber.fromIntegralStringUnsafe(${s.toString}))"
+          q"_root_.io.circe013.Json.fromJsonNumber(_root_.io.circe013.JsonNumber.fromIntegralStringUnsafe(${s.toString}))"
         } else {
-          q"_root_.io.circe.Json.fromJsonNumber(_root_.io.circe.JsonNumber.fromDecimalStringUnsafe(${s.toString}))"
+          q"_root_.io.circe013.Json.fromJsonNumber(_root_.io.circe013.JsonNumber.fromDecimalStringUnsafe(${s.toString}))"
         }
     }
   }

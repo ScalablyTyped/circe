@@ -1,4 +1,4 @@
-package io.circe.jawn
+package io.circe013.jawn
 
 import org.scalatest.funspec.AnyFunSpec
 

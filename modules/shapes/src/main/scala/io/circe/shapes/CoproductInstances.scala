@@ -1,6 +1,6 @@
-package io.circe.shapes
+package io.circe013.shapes
 
-import io.circe.{ Decoder, DecodingFailure, Encoder, HCursor, Json }
+import io.circe013.{ Decoder, DecodingFailure, Encoder, HCursor, Json }
 import shapeless.{ :+:, CNil, Coproduct, Inl, Inr }
 
 trait CoproductInstances {

@@ -1,7 +1,7 @@
-package io.circe.testing
+package io.circe013.testing
 
 import cats.instances.list._
-import io.circe.{
+import io.circe013.{
   Decoder,
   DecodingFailure,
   Encoder,
@@ -12,8 +12,8 @@ import io.circe.{
   KeyDecoder,
   KeyEncoder
 }
-import io.circe.numbers.BiggerDecimal
-import io.circe.numbers.testing.{ IntegralString, JsonNumberString }
+import io.circe013.numbers.BiggerDecimal
+import io.circe013.numbers.testing.{ IntegralString, JsonNumberString }
 import org.scalacheck.{ Arbitrary, Cogen, Gen }
 
 trait ArbitraryInstances extends ArbitraryJsonNumberTransformer with CogenInstances with ShrinkInstances {

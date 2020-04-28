@@ -1,4 +1,4 @@
-package io.circe.tests.examples
+package io.circe013.tests.examples
 
 import cats.kernel.Eq
 import org.scalacheck.{ Arbitrary, Gen }

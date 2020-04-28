@@ -1,14 +1,14 @@
-package io.circe.generic
+package io.circe013.generic
 
 import cats.kernel.Eq
 import cats.syntax.eq._
-import io.circe.{ Codec, Decoder, Encoder, Json }
-import io.circe.generic.decoding.DerivedDecoder
-import io.circe.generic.encoding.DerivedAsObjectEncoder
-import io.circe.generic.semiauto._
-import io.circe.testing.CodecTests
-import io.circe.tests.CirceSuite
-import io.circe.tests.examples._
+import io.circe013.{ Codec, Decoder, Encoder, Json }
+import io.circe013.generic.decoding.DerivedDecoder
+import io.circe013.generic.encoding.DerivedAsObjectEncoder
+import io.circe013.generic.semiauto._
+import io.circe013.testing.CodecTests
+import io.circe013.tests.CirceSuite
+import io.circe013.tests.examples._
 import org.scalacheck.{ Arbitrary, Gen }
 import shapeless.Witness, shapeless.labelled.{ FieldType, field }
 import shapeless.test.illTyped

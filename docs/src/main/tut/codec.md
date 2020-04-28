@@ -16,7 +16,7 @@ provides instances for `List[A]`, `Option[A]`, and other generic types, but only
 Encoding data to `Json` can be done using the `.asJson` syntax:
 
 ```scala mdoc
-import io.circe.syntax._
+import io.circe013.syntax._
 
 val intsJson = List(1, 2, 3).asJson
 ```
@@ -31,7 +31,7 @@ The `decode` function from the included [parser] module can be used to directly 
 a JSON `String`:
 
 ```scala mdoc
-import io.circe.parser.decode
+import io.circe013.parser.decode
 
 decode[List[Int]]("[1, 2, 3]")
 ```

@@ -1,8 +1,8 @@
-package io.circe.cursor
+package io.circe013.cursor
 
-import io.circe.{ ACursor, CursorOp, HCursor, Json }
+import io.circe013.{ ACursor, CursorOp, HCursor, Json }
 
-private[circe] final class ArrayCursor(values: Vector[Json], index: Int, parent: HCursor, changed: Boolean)(
+private[circe013] final class ArrayCursor(values: Vector[Json], index: Int, parent: HCursor, changed: Boolean)(
   lastCursor: HCursor,
   lastOp: CursorOp
 ) extends HCursor(lastCursor, lastOp) {

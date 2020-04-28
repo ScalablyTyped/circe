@@ -1,4 +1,4 @@
-package io.circe
+package io.circe013
 
 /**
  * This package provides syntax via enrichment classes.

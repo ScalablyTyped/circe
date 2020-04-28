@@ -1,4 +1,4 @@
-package io.circe
+package io.circe013
 
 import scala.collection.{ Factory, IterableOnce }
 import scala.collection.mutable.{ ArrayBuffer, ArrayBuilder, Builder }

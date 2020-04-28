@@ -1,7 +1,7 @@
-package io.circe.generic.util.macros
+package io.circe013.generic.util.macros
 
-import io.circe.{ Decoder, Encoder }
-import io.circe.generic.decoding.ReprDecoder
+import io.circe013.{ Decoder, Encoder }
+import io.circe013.generic.decoding.ReprDecoder
 import scala.annotation.tailrec
 import scala.reflect.macros.blackbox
 import shapeless.{ CNil, Coproduct, HList, HNil, Lazy }
@@ -41,10 +41,10 @@ abstract class DerivationMacros[RD[_], RE[_], RC[_], DD[_], DE[_], DC[_]] {
   protected[this] def encodeSubtype(name: String, encode: TermName, value: TermName): Tree
 
   private[this] def fullDecodeMethodArgs(tpe: Type): List[List[Tree]] =
-    List(q"c: _root_.io.circe.HCursor") :: (if (decodeMethodArgs.isEmpty) Nil else List(decodeMethodArgs))
+    List(q"c: _root_.io.circe013.HCursor") :: (if (decodeMethodArgs.isEmpty) Nil else List(decodeMethodArgs))
 
   private[this] def fullDecodeAccumulatingMethodArgs(tpe: Type): List[List[Tree]] =
-    List(q"c: _root_.io.circe.HCursor") :: (
+    List(q"c: _root_.io.circe013.HCursor") :: (
       if (decodeAccumulatingMethodArgs.isEmpty) Nil else List(decodeAccumulatingMethodArgs)
     )
 
@@ -189,38 +189,38 @@ abstract class DerivationMacros[RD[_], RE[_], RC[_], DD[_], DE[_], DC[_]] {
         (
           q"""
         $ReprDecoderUtils.consResults[
-          _root_.io.circe.Decoder.Result,
+          _root_.io.circe013.Decoder.Result,
           $nameTpe,
           $tpe,
           $accTail
         ](
           ${decodeField(label, instanceName)},
           $acc
-        )(_root_.io.circe.Decoder.resultInstance)
+        )(_root_.io.circe013.Decoder.resultInstance)
       """,
           q"""
         $ReprDecoderUtils.consResults[
-          _root_.io.circe.Decoder.AccumulatingResult,
+          _root_.io.circe013.Decoder.AccumulatingResult,
           $nameTpe,
           $tpe,
           $accTail
         ](
           ${decodeFieldAccumulating(label, instanceName)},
           $accAccumulating
-        )(_root_.io.circe.Decoder.accumulatingResultInstance)
+        )(_root_.io.circe013.Decoder.accumulatingResultInstance)
       """
         )
     }
 
   private[this] val cnilResult: Tree = q"""
-    _root_.scala.util.Left[_root_.io.circe.DecodingFailure, _root_.shapeless.CNil](
-      _root_.io.circe.DecodingFailure("CNil", c.history)
-    ): _root_.scala.util.Either[_root_.io.circe.DecodingFailure, _root_.shapeless.CNil]
+    _root_.scala.util.Left[_root_.io.circe013.DecodingFailure, _root_.shapeless.CNil](
+      _root_.io.circe013.DecodingFailure("CNil", c.history)
+    ): _root_.scala.util.Either[_root_.io.circe013.DecodingFailure, _root_.shapeless.CNil]
   """
 
   private[this] val cnilResultAccumulating: Tree = q"""
-    _root_.cats.data.Validated.invalidNel[_root_.io.circe.DecodingFailure, _root_.shapeless.CNil](
-      _root_.io.circe.DecodingFailure("CNil", c.history)
+    _root_.cats.data.Validated.invalidNel[_root_.io.circe013.DecodingFailure, _root_.shapeless.CNil](
+      _root_.io.circe013.DecodingFailure("CNil", c.history)
     )
   """
 
@@ -274,11 +274,11 @@ abstract class DerivationMacros[RD[_], RE[_], RC[_], DD[_], DE[_], DC[_]] {
 
             final def $decodeMethodName(
               ...${fullDecodeMethodArgs(R.tpe)}
-            ): _root_.io.circe.Decoder.Result[$R] = $result
+            ): _root_.io.circe013.Decoder.Result[$R] = $result
 
             final override def $decodeAccumulatingMethodName(
               ...${fullDecodeAccumulatingMethodArgs(R.tpe)}
-            ): _root_.io.circe.Decoder.AccumulatingResult[$R] = $resultAccumulating
+            ): _root_.io.circe013.Decoder.AccumulatingResult[$R] = $resultAccumulating
           }: $instanceType
         """
       }
@@ -304,7 +304,7 @@ abstract class DerivationMacros[RD[_], RE[_], RC[_], DD[_], DE[_], DC[_]] {
       q"""
         a match {
           case $pattern =>
-            _root_.io.circe.JsonObject.fromIterable(_root_.scala.collection.immutable.Vector(..$fields))
+            _root_.io.circe013.JsonObject.fromIterable(_root_.scala.collection.immutable.Vector(..$fields))
         }
       """
     )
@@ -349,7 +349,7 @@ abstract class DerivationMacros[RD[_], RE[_], RC[_], DD[_], DE[_], DC[_]] {
         new $instanceType {
           ..$instanceDefs
 
-          final def $encodeMethodName(...${fullEncodeMethodArgs(R.tpe)}): _root_.io.circe.JsonObject = $instanceImpl
+          final def $encodeMethodName(...${fullEncodeMethodArgs(R.tpe)}): _root_.io.circe013.JsonObject = $instanceImpl
         }: $instanceType
       """
     }
@@ -378,16 +378,16 @@ abstract class DerivationMacros[RD[_], RE[_], RC[_], DD[_], DE[_], DC[_]] {
             ..$encoderInstanceDefs
             ..$decoderInstanceDefs
 
-            final def $encodeMethodName(...${fullEncodeMethodArgs(R.tpe)}): _root_.io.circe.JsonObject =
+            final def $encodeMethodName(...${fullEncodeMethodArgs(R.tpe)}): _root_.io.circe013.JsonObject =
               $encoderInstanceImpl
 
             final def $decodeMethodName(
               ...${fullDecodeMethodArgs(R.tpe)}
-            ): _root_.io.circe.Decoder.Result[$R] = $result
+            ): _root_.io.circe013.Decoder.Result[$R] = $result
 
             final override def $decodeAccumulatingMethodName(
               ...${fullDecodeAccumulatingMethodArgs(R.tpe)}
-            ): _root_.io.circe.Decoder.AccumulatingResult[$R] = $resultAccumulating
+            ): _root_.io.circe013.Decoder.AccumulatingResult[$R] = $resultAccumulating
           }: $instanceType
         """
       }

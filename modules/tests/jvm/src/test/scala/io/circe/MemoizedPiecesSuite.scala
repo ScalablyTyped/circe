@@ -1,6 +1,6 @@
-package io.circe
+package io.circe013
 
-import io.circe.tests.CirceSuite
+import io.circe013.tests.CirceSuite
 import org.scalacheck.{ Arbitrary, Gen }
 import org.scalatest.concurrent.ScalaFutures
 import org.scalatest.time.{ Millis, Span }

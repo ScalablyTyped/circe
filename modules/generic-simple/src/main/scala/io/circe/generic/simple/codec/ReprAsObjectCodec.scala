@@ -1,7 +1,7 @@
-package io.circe.generic.simple.codec
+package io.circe013.generic.simple.codec
 
 import cats.Apply
-import io.circe.{ Codec, Decoder, DecodingFailure, Encoder, HCursor, JsonObject }
+import io.circe013.{ Codec, Decoder, DecodingFailure, Encoder, HCursor, JsonObject }
 import shapeless.{ :+:, ::, CNil, Coproduct, HList, HNil, Inl, Inr, Witness }
 import shapeless.labelled.{ FieldType, field }
 

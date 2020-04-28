@@ -1,12 +1,12 @@
-package io.circe.generic
+package io.circe013.generic
 
 import cats.kernel.Eq
 import cats.syntax.eq._
-import io.circe.{ Codec, Decoder, Encoder, Json }
-import io.circe.generic.semiauto._
-import io.circe.testing.CodecTests
-import io.circe.tests.CirceSuite
-import io.circe.tests.examples._
+import io.circe013.{ Codec, Decoder, Encoder, Json }
+import io.circe013.generic.semiauto._
+import io.circe013.testing.CodecTests
+import io.circe013.tests.CirceSuite
+import io.circe013.tests.examples._
 import org.scalacheck.{ Arbitrary, Gen }
 
 object SemiautoDerivedSuite {

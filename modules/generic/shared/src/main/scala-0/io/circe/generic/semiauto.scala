@@ -1,18 +1,18 @@
-package io.circe.generic
+package io.circe013.generic
 
-import io.circe.{ Codec, Decoder, Encoder }
+import io.circe013.{ Codec, Decoder, Encoder }
 import scala.deriving.Mirror
 
 /**
  * Semi-automatic codec derivation.
  *
- * This object provides helpers for creating [[io.circe.Decoder]] and [[io.circe.ObjectEncoder]]
+ * This object provides helpers for creating [[io.circe013.Decoder]] and [[io.circe013.ObjectEncoder]]
  * instances for case classes, "incomplete" case classes, sealed trait hierarchies, etc.
  *
  * Typical usage will look like the following:
  *
  * {{{
- *   import io.circe._, io.circe.generic.semiauto._
+ *   import io.circe013._, io.circe013.generic.semiauto._
  *
  *   case class Foo(i: Int, p: (String, Double))
  *

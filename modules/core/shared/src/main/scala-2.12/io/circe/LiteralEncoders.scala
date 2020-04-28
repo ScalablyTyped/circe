@@ -1,3 +1,3 @@
-package io.circe
+package io.circe013
 
-private[circe] trait LiteralEncoders
+private[circe013] trait LiteralEncoders

@@ -1,6 +1,6 @@
-package io.circe.generic.simple.codec
+package io.circe013.generic.simple.codec
 
-import io.circe.{ Codec, Decoder, HCursor, JsonObject }
+import io.circe013.{ Codec, Decoder, HCursor, JsonObject }
 import shapeless.LabelledGeneric
 
 abstract class DerivedAsObjectCodec[A] extends Codec.AsObject[A]

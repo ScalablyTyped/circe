@@ -1,8 +1,8 @@
-package io.circe
+package io.circe013
 
 import scala.util.{ Failure, Success, Try }
 
-private[circe] trait EnumerationDecoders {
+private[circe013] trait EnumerationDecoders {
 
   /**
    * {{{

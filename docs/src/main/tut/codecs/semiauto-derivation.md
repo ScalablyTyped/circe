@@ -8,7 +8,7 @@ title:  "Semi-automatic derivation"
 Sometimes it's convenient to have an `Encoder` or `Decoder` defined in your code, and semi-automatic derivation can help. You'd write:
 
 ```scala mdoc:silent
-import io.circe._, io.circe.generic.semiauto._
+import io.circe013._, io.circe013.generic.semiauto._
 
 case class Foo(a: Int, b: String, c: Boolean)
 
@@ -19,7 +19,7 @@ implicit val fooEncoder: Encoder[Foo] = deriveEncoder[Foo]
 Or simply:
 
 ```scala mdoc:silent:reset
-import io.circe._, io.circe.generic.semiauto._
+import io.circe013._, io.circe013.generic.semiauto._
 
 case class Foo(a: Int, b: String, c: Boolean)
 
@@ -33,7 +33,7 @@ The circe-generic project includes a `@JsonCodec` annotation that simplifies the
 use of semi-automatic generic derivation:
 
 ```scala mdoc
-import io.circe.generic.JsonCodec, io.circe.syntax._
+import io.circe013.generic.JsonCodec, io.circe013.syntax._
 
 @JsonCodec case class Bar(i: Int, s: String)
 
@@ -50,7 +50,7 @@ It's also possible to construct encoders and decoders for case class-like types
 in a relatively boilerplate-free way without generic derivation:
 
 ```scala mdoc
-import io.circe.{ Decoder, Encoder }
+import io.circe013.{ Decoder, Encoder }
 
 case class User(id: Long, firstName: String, lastName: String)
 

@@ -1,9 +1,9 @@
-package io.circe.generic.decoding
+package io.circe013.generic.decoding
 
 import cats.Apply
 import cats.data.Validated
-import io.circe.{ Decoder, DecodingFailure, HCursor }
-import io.circe.generic.Deriver
+import io.circe013.{ Decoder, DecodingFailure, HCursor }
+import io.circe013.generic.Deriver
 import scala.language.experimental.macros
 import shapeless.{ :+:, ::, Coproduct, HList, HNil, Inl }
 import shapeless.labelled.{ FieldType, field }

@@ -1,4 +1,4 @@
-package io.circe
+package io.circe013
 
 import cats.data.{NonEmptyList, Validated}
 import scala.deriving.{ArrayProduct, Mirror}
@@ -39,7 +39,7 @@ object Derivation {
     }
 }
 
-private[circe] trait EncoderDerivation {
+private[circe013] trait EncoderDerivation {
   inline final def derived[A](given inline A: Mirror.Of[A]): Encoder.AsObject[A] =
     new DerivedEncoder[A]
         with DerivedInstance[A](
@@ -59,7 +59,7 @@ private[circe] trait EncoderDerivation {
     }
 }
 
-private[circe] trait DecoderDerivation {
+private[circe013] trait DecoderDerivation {
   inline final def derived[A](given inline A: Mirror.Of[A]): Decoder[A] =
     new DerivedDecoder[A]
         with DerivedInstance[A](
@@ -130,7 +130,7 @@ private[circe] trait DecoderDerivation {
   }
 }
 
-private[circe] trait CodecDerivation {
+private[circe013] trait CodecDerivation {
   inline final def derived[A](given inline A: Mirror.Of[A]): Codec.AsObject[A] =
     new Codec.AsObject[A]
         with DerivedDecoder[A]
@@ -213,7 +213,7 @@ private[circe] trait CodecDerivation {
   }
 }
 
-private[circe] trait DerivedInstance[A](
+private[circe013] trait DerivedInstance[A](
   final val name: String,
   protected[this] final val elemLabels: Array[String]
 ) {
@@ -228,7 +228,7 @@ private[circe] trait DerivedInstance[A](
   }
 }
 
-private[circe] trait DerivedEncoder[A] extends DerivedInstance[A] with Encoder.AsObject[A] {
+private[circe013] trait DerivedEncoder[A] extends DerivedInstance[A] with Encoder.AsObject[A] {
   protected[this] def elemEncoders: Array[Encoder[_]]
 
   final def encodeWith(index: Int)(value: Any): (String, Json) =
@@ -249,7 +249,7 @@ private[circe] trait DerivedEncoder[A] extends DerivedInstance[A] with Encoder.A
     }
 }
 
-private[circe] trait DerivedDecoder[A] extends DerivedInstance[A] with Decoder[A] {
+private[circe013] trait DerivedDecoder[A] extends DerivedInstance[A] with Decoder[A] {
   protected[this] def elemDecoders: Array[Decoder[_]]
 
   final def decodeWith(index: Int)(c: HCursor): Decoder.Result[AnyRef] =

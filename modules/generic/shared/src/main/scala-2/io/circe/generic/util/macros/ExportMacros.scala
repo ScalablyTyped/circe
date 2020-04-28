@@ -1,9 +1,9 @@
-package io.circe.generic.util.macros
+package io.circe013.generic.util.macros
 
-import io.circe.{ Decoder, Encoder }
-import io.circe.export.Exported
-import io.circe.generic.decoding.DerivedDecoder
-import io.circe.generic.encoding.DerivedAsObjectEncoder
+import io.circe013.{ Decoder, Encoder }
+import io.circe013.export.Exported
+import io.circe013.generic.decoding.DerivedDecoder
+import io.circe013.generic.encoding.DerivedAsObjectEncoder
 import scala.reflect.macros.blackbox
 
 class ExportMacros(val c: blackbox.Context) {
@@ -20,7 +20,7 @@ class ExportMacros(val c: blackbox.Context) {
       case EmptyTree => c.abort(c.enclosingPosition, s"Unable to infer value of type $target")
       case t =>
         c.Expr[Exported[Decoder[A]]](
-          q"new _root_.io.circe.export.Exported($t: _root_.io.circe.Decoder[$A])"
+          q"new _root_.io.circe013.export.Exported($t: _root_.io.circe013.Decoder[$A])"
         )
     }
   }
@@ -36,7 +36,7 @@ class ExportMacros(val c: blackbox.Context) {
       case EmptyTree => c.abort(c.enclosingPosition, s"Unable to infer value of type $target")
       case t =>
         c.Expr[Exported[Encoder.AsObject[A]]](
-          q"new _root_.io.circe.export.Exported($t: _root_.io.circe.Encoder.AsObject[$A])"
+          q"new _root_.io.circe013.export.Exported($t: _root_.io.circe013.Encoder.AsObject[$A])"
         )
     }
   }

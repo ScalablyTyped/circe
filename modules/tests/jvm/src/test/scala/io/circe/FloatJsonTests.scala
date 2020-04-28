@@ -1,7 +1,7 @@
-package io.circe
+package io.circe013
 
 import cats.syntax.eq._
-import io.circe.tests.CirceSuite
+import io.circe013.tests.CirceSuite
 
 /**
  * Tests that fail because of limitations on Scala.js.

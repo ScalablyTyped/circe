@@ -13,7 +13,7 @@ circe provides support for optics by integrating with [Monocle](https://julien-t
 dependency on `circe-optics` to your build:
 
 ```scala
-libraryDependencies += "io.circe" %% "circe-optics" % circeVersion
+libraryDependencies += "io.circe013" %% "circe-optics" % circeVersion
 ```
 
 Note that this will require your project to depend on both Scalaz and cats.
@@ -23,7 +23,7 @@ Note that this will require your project to depend on both Scalaz and cats.
 Suppose we have the following JSON document:
 
 ```scala mdoc:silent
-import io.circe._, io.circe.parser._
+import io.circe013._, io.circe013.parser._
 
 val json: Json = parse("""
 {
@@ -64,7 +64,7 @@ val phoneNumFromCursor: Option[String] = json.hcursor.
 This works, but it's a little verbose. We could rewrite it using optics like this:
 
 ```scala mdoc
-import io.circe.optics.JsonPath._
+import io.circe013.optics.JsonPath._
 
 val _phoneNum = root.order.customer.contactDetails.phone.string
 
@@ -123,7 +123,7 @@ Sometimes you may need to recursively modify JSON. Let assume you need to transf
 strings in the example JSON:
 
 ```scala mdoc
-import io.circe.optics.JsonOptics._
+import io.circe013.optics.JsonOptics._
 import monocle.function.Plated
 
 Plated.transform[Json] { j =>

@@ -5,7 +5,7 @@ import sbtcrossproject.{ CrossProject, CrossType }
 import scala.xml.{ Elem, Node => XmlNode, NodeSeq => XmlNodeSeq }
 import scala.xml.transform.{ RewriteRule, RuleTransformer }
 
-organization in ThisBuild := "io.circe"
+organization in ThisBuild := "io.circe013"
 
 val compilerOptions = Seq(
   "-deprecation",
@@ -97,7 +97,7 @@ def circeModule(path: String, mima: Option[String]): Project = {
   val id = path.split("-").reduce(_ + _.capitalize)
   Project(id, file(s"modules/$path"))
     .configure(circeProject(path))
-    .settings(mimaPreviousArtifacts := mima.map("io.circe" %% moduleName.value % _).toSet)
+    .settings(mimaPreviousArtifacts := mima.map("io.circe013" %% moduleName.value % _).toSet)
 }
 
 def circeCrossModule(path: String, mima: Option[String], crossType: CrossType = CrossType.Full) = {
@@ -107,7 +107,7 @@ def circeCrossModule(path: String, mima: Option[String], crossType: CrossType = 
     .settings(allSettings)
     .configure(circeProject(path))
     .jvmSettings(
-      mimaPreviousArtifacts := mima.map("io.circe" %% moduleName.value % _).toSet
+      mimaPreviousArtifacts := mima.map("io.circe013" %% moduleName.value % _).toSet
     )
 }
 
@@ -156,7 +156,7 @@ lazy val docSettings = allSettings ++ Seq(
   ),
   micrositeConfigYaml := ConfigYml(yamlInline = s"""
       |scalafiddle:
-      |  dependency: io.circe %%% circe-core % $scalaFiddleCirceVersion,io.circe %%% circe-generic % $scalaFiddleCirceVersion,io.circe %%% circe-parser % $scalaFiddleCirceVersion
+      |  dependency: io.circe013 %%% circe-core % $scalaFiddleCirceVersion,io.circe013 %%% circe-generic % $scalaFiddleCirceVersion,io.circe013 %%% circe-parser % $scalaFiddleCirceVersion
     """.stripMargin),
   addMappingsToSiteDir(mappings in (ScalaUnidoc, packageDoc), micrositeDocumentationUrl),
   ghpagesNoJekyll := true,
@@ -188,8 +188,8 @@ lazy val docs = project
     name := "Circe docs",
     mdocIn := file("docs/src/main/tut"),
     libraryDependencies ++= Seq(
-      "io.circe" %% "circe-generic-extras" % "0.12.2",
-      "io.circe" %% "circe-optics" % "0.12.0"
+      "io.circe013" %% "circe-generic-extras" % "0.12.2",
+      "io.circe013" %% "circe-optics" % "0.12.0"
     )
   )
   .settings(docSettings)
@@ -256,11 +256,11 @@ lazy val circe = project
   .settings(
     initialCommands in console :=
       """
-        |import io.circe._
-        |import io.circe.generic.auto._
-        |import io.circe.literal._
-        |import io.circe.parser._
-        |import io.circe.syntax._
+        |import io.circe013._
+        |import io.circe013.generic.auto._
+        |import io.circe013.literal._
+        |import io.circe013.parser._
+        |import io.circe013.syntax._
       """.stripMargin
   )
   .aggregate(aggregatedProjects: _*)

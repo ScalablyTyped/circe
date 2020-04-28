@@ -1,11 +1,11 @@
-package io.circe.testing
+package io.circe013.testing
 
 import cats.data.{ Validated, ValidatedNel }
 import cats.instances.either._
 import cats.kernel.laws.SerializableLaws
 import cats.laws._
 import cats.laws.discipline._
-import io.circe.{ Error, Json, Parser, ParsingFailure }
+import io.circe013.{ Error, Json, Parser, ParsingFailure }
 import org.scalacheck.{ Arbitrary, Prop, Shrink }
 import org.typelevel.discipline.Laws
 

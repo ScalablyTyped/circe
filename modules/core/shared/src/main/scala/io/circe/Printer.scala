@@ -1,4 +1,4 @@
-package io.circe
+package io.circe013
 
 import java.io.Serializable
 import java.lang.StringBuilder
@@ -300,14 +300,14 @@ object Printer {
 
   private[this] final def toHex(nibble: Int): Char = (nibble + (if (nibble >= 10) 87 else 48)).toChar
 
-  private[circe] abstract class PrintingFolder(
-    private[circe] val writer: Appendable,
-    private[circe] val pieces: PiecesAtDepth,
-    private[circe] val dropNullValues: Boolean,
-    private[circe] val escapeNonAscii: Boolean,
-    private[circe] val sortKeys: Boolean
+  private[circe013] abstract class PrintingFolder(
+    private[circe013] val writer: Appendable,
+    private[circe013] val pieces: PiecesAtDepth,
+    private[circe013] val dropNullValues: Boolean,
+    private[circe013] val escapeNonAscii: Boolean,
+    private[circe013] val sortKeys: Boolean
   ) extends Json.Folder[Unit] {
-    private[circe] var depth: Int = 0
+    private[circe013] var depth: Int = 0
 
     final def onNull: Unit = writer.append("null")
 
@@ -370,7 +370,7 @@ object Printer {
     final def onObject(value: JsonObject): Unit = value.appendToFolder(this)
   }
 
-  private[circe] final case class Pieces(
+  private[circe013] final case class Pieces(
     lBraces: String,
     rBraces: String,
     lBrackets: String,
@@ -383,15 +383,15 @@ object Printer {
 
   private[this] final val maxMemoizationDepth = 128
 
-  private[circe] abstract class PiecesAtDepth extends Serializable {
+  private[circe013] abstract class PiecesAtDepth extends Serializable {
     def apply(i: Int): Pieces
   }
 
-  private[circe] final class ConstantPieces(pieces: Pieces) extends PiecesAtDepth {
+  private[circe013] final class ConstantPieces(pieces: Pieces) extends PiecesAtDepth {
     def apply(i: Int): Pieces = pieces
   }
 
-  private[circe] abstract class MemoizedPieces(indent: String) extends PiecesAtDepth {
+  private[circe013] abstract class MemoizedPieces(indent: String) extends PiecesAtDepth {
     def compute(i: Int): Pieces
 
     private[this] final val known = new CopyOnWriteArrayList[Pieces](

@@ -1,10 +1,10 @@
-package io.circe.generic.simple
+package io.circe013.generic.simple
 
-import io.circe.{ Codec, Decoder, Encoder }
-import io.circe.generic.simple.codec.DerivedAsObjectCodec
-import io.circe.generic.simple.decoding.{ DerivedDecoder, ReprDecoder }
-import io.circe.generic.simple.encoding.DerivedAsObjectEncoder
-import io.circe.generic.simple.util.PatchWithOptions
+import io.circe013.{ Codec, Decoder, Encoder }
+import io.circe013.generic.simple.codec.DerivedAsObjectCodec
+import io.circe013.generic.simple.decoding.{ DerivedDecoder, ReprDecoder }
+import io.circe013.generic.simple.encoding.DerivedAsObjectEncoder
+import io.circe013.generic.simple.util.PatchWithOptions
 import shapeless.{ HList, LabelledGeneric }
 import shapeless.ops.function.FnFromProduct
 import shapeless.ops.record.RemoveAll
@@ -12,13 +12,13 @@ import shapeless.ops.record.RemoveAll
 /**
  * Semi-automatic codec derivation.
  *
- * This object provides helpers for creating [[io.circe.Decoder]] and [[io.circe.ObjectEncoder]]
+ * This object provides helpers for creating [[io.circe013.Decoder]] and [[io.circe013.ObjectEncoder]]
  * instances for case classes, "incomplete" case classes, sealed trait hierarchies, etc.
  *
  * Typical usage will look like the following:
  *
  * {{{
- *   import io.circe._, io.circe.generic.semiauto._
+ *   import io.circe013._, io.circe013.generic.semiauto._
  *
  *   case class Foo(i: Int, p: (String, Double))
  *

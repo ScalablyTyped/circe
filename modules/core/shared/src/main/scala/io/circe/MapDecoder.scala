@@ -1,11 +1,11 @@
-package io.circe
+package io.circe013
 
 import cats.data.{ NonEmptyList, Validated }
-import io.circe.cursor.ObjectCursor
+import io.circe013.cursor.ObjectCursor
 import scala.collection.Map
 import scala.collection.mutable.Builder
 
-private[circe] abstract class MapDecoder[K, V, M[K, V] <: Map[K, V]](
+private[circe013] abstract class MapDecoder[K, V, M[K, V] <: Map[K, V]](
   decodeK: KeyDecoder[K],
   decodeV: Decoder[V]
 ) extends Decoder[M[K, V]] {
@@ -99,7 +99,7 @@ private[circe] abstract class MapDecoder[K, V, M[K, V] <: Map[K, V]](
   }
 }
 
-private[circe] object MapDecoder {
+private[circe013] object MapDecoder {
   final def failure(c: HCursor): DecodingFailure = DecodingFailure("[K, V]Map[K, V]", c.history)
   final def failureResult[A](c: HCursor): Decoder.Result[A] = Left[DecodingFailure, A](failure(c))
   final def failureAccumulatingResult[A](c: HCursor): Decoder.AccumulatingResult[A] =

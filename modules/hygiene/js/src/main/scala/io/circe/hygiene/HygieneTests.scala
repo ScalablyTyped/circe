@@ -1,7 +1,7 @@
-package io.circe.hygiene
+package io.circe013.hygiene
 
-import io.circe.generic.auto._
-import io.circe.syntax._
+import io.circe013.generic.auto._
+import io.circe013.syntax._
 
 sealed trait Foo
 case class Bar(xs: scala.List[java.lang.String]) extends Foo
