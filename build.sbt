@@ -5,7 +5,7 @@ import sbtcrossproject.{ CrossProject, CrossType }
 import scala.xml.{ Elem, Node => XmlNode, NodeSeq => XmlNodeSeq }
 import scala.xml.transform.{ RewriteRule, RuleTransformer }
 
-organization in ThisBuild := "io.circe013"
+organization in ThisBuild := "org.scalablytyped.circe013"
 
 val compilerOptions = Seq(
   "-deprecation",
@@ -70,10 +70,6 @@ lazy val baseSettings = Seq(
   scalacOptions in Test ~= {
     _.filterNot(Set("-Yno-predef"))
   },
-  resolvers ++= Seq(
-    Resolver.sonatypeRepo("releases"),
-    Resolver.sonatypeRepo("snapshots")
-  ),
   coverageHighlighting := true,
   (scalastyleSources in Compile) ++= (unmanagedSourceDirectories in Compile).value,
   ivyConfigurations += CompileTime.hide,
@@ -189,7 +185,7 @@ lazy val docs = project
     mdocIn := file("docs/src/main/tut"),
     libraryDependencies ++= Seq(
       "io.circe013" %% "circe-generic-extras" % "0.12.2",
-      "io.circe013" %% "circe-optics" % "0.12.0"
+//      "io.circe013" %% "circe-optics" % "0.12.0" // todo: break docs and don't publish this module for now
     )
   )
   .settings(docSettings)
@@ -555,31 +551,10 @@ lazy val benchmarkDotty = circeModule("benchmark-dotty", mima = None)
   .dependsOn(core, jawn)
 
 lazy val publishSettings = Seq(
-  releaseCrossBuild := true,
-  releasePublishArtifactsAction := PgpKeys.publishSigned.value,
-  releaseVcsSign := true,
-  homepage := Some(url("https://github.com/circe/circe")),
+  sonatypeCredentialHost := Sonatype.sonatype01,
+  sonatypeProfileName := "org.scalablytyped",
+  homepage := Some(url("https://github.com/ScalablyTyped/circe")),
   licenses := Seq("Apache 2.0" -> url("http://www.apache.org/licenses/LICENSE-2.0")),
-  publishMavenStyle := true,
-  publishArtifact in Test := false,
-  pomIncludeRepository := { _ =>
-    false
-  },
-  publishTo := {
-    val nexus = "https://oss.sonatype.org/"
-    if (isSnapshot.value)
-      Some("snapshots".at(nexus + "content/repositories/snapshots"))
-    else
-      Some("releases".at(nexus + "service/local/staging/deploy/maven2"))
-  },
-  autoAPIMappings := true,
-  apiURL := Some(url("https://circe.github.io/circe/api/")),
-  scmInfo := Some(
-    ScmInfo(
-      url("https://github.com/circe/circe"),
-      "scm:git:git@github.com:circe/circe.git"
-    )
-  ),
   developers := List(
     Developer("travisbrown", "Travis Brown", "travisrobertbrown@gmail.com", url("https://twitter.com/travisbrown"))
   ),
